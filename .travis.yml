@@ -1,8 +1,8 @@
 compiler: gcc
 language: cpp
 script:
-    -cd sources
-    -g++ ArbolAVL.cpp -o AVL
-    -./AVL
-    -g++ ArbolB.cpp -o AB
-    -./AB
+    - cd sources
+    - g++ ArbolAVL.cpp -o AVL
+    - ./AVL
+    - g++ ArbolB.cpp -o AB
+    - ./AB
