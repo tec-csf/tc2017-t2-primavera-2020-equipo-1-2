@@ -19,6 +19,7 @@ class arbolB{
 
 int main()
 {
-    
+        cout << "Print para asegurarnos que Travis si funciones - ArbolB" << endl;
+
     return 0;
 }
