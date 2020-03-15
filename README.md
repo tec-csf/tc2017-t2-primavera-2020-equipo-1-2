@@ -1,4 +1,4 @@
-# Tarea *[Poner aquí el número de la tarea]*. *[Poner aquí el título de la tarea]*
+# Tarea *2*. *[Poner aquí el título de la tarea]*
 
 ---
 
