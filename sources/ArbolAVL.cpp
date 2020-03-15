@@ -13,10 +13,11 @@ class arbolAVL{
     void insertar();
     void busqueda();
     void eliminar();
+    void imprimir();
 
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     
     return 0;

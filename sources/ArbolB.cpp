@@ -13,10 +13,11 @@ class arbolB{
     void insertar();
     void busqueda();
     void eliminar();
+    void impresionValores();
 
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     
     return 0;
