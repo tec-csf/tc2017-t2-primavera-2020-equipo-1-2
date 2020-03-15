@@ -1,4 +1,4 @@
-# Tarea *2*. *[Poner aquí el título de la tarea]*
+# Tarea *2*. *Análisis de Algoritmos*
 
 ---
 
