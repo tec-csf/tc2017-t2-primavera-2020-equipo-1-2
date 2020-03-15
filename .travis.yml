@@ -1,12 +1,8 @@
 compiler: gcc
 language: cpp
 script:
-    -echo " "
-    -echo "Arbol AVL"
     -cd sources
     -g++ ArbolAVL.cpp -o AVL
     -./AVL
-    -echo " "
-    -echo "Arbol B"
     -g++ ArbolB.cpp -o AB
     -./AB
