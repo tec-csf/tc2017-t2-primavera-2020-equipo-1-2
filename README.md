@@ -3,11 +3,11 @@
 ---
 
 ##### Integrantes:
-1. *[Poner aquí Nombre y Apellidos del integrante 1]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
-2. *[Poner aquí Nombre y Apellidos del integrante 2]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
-3. *[Poner aquí Nombre y Apellidos del integrante 3]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
-4. *[Poner aquí Nombre y Apellidos del integrante 4]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
-5. *[Poner aquí Nombre y Apellidos del integrante 5]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
+1. Luis Daniel Roa González - A01021960 - Campus Santa Fe
+2. Katia Yareth Bellido López - A01023638 - Campus Santa Fe
+3. Constanza Gómez Sánchez - A01026717 - Campus Santa Fe
+4. Christopher Luis Miranda Vanegas - A01022676 - Campus Santa Fe
+5. Miguel Monterrubio Bandera - A01022153 - Campus Santa Fe
 
 ---
 ## 1. Aspectos generales
