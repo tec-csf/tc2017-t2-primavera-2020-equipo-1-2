@@ -8,8 +8,11 @@ using namespace std::chrono;
 
 template <class T>
 class arbolB{
-    public:
+
     
+
+    public:
+    arbolB();
     void insertar();
     void busqueda();
     void eliminar();
@@ -19,7 +22,12 @@ class arbolB{
 
 int main()
 {
-        cout << "Print para asegurarnos que Travis si funciones - ArbolB" << endl;
+
+    int grados = 5;     // Valor que define cantidad de números que tendrá el bloque
+    int cantValores;    // Cantidad de valores aleatorios que se insertarán en el Árbol
+
+    arbolB(grados);
+
 
     return 0;
 }
