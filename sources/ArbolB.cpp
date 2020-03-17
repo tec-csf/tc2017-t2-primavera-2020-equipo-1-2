@@ -6,6 +6,24 @@
 using namespace std;
 using namespace std::chrono;
 
+class Ramas{
+    int *valores;
+    int grados;
+    Ramas **apun;
+    int x; 
+    bool war; //waraq == hoja (en árabe)
+
+public:
+    Ramas(int grados, bool war );
+
+    void insertarVacio(int nuevo);
+
+    void separaBloque(int i, Ramas *z);
+
+    void atraviesa();
+
+    Ramas *busqueda(int lost);
+};
 
 template <class T>
 class arbolB{
@@ -15,8 +33,12 @@ class arbolB{
 
 public:
     arbolB(int val);
-    void insertar();
-    void busqueda();
+    void atraviesa(){
+        raiz = NULL;
+        
+    }
+    void insertar(int nuevo);
+    void busqueda(int lost);
     void eliminar(int posKey)
         {
             int remover = 0; // aquí se va a agregar de buscar la posición en donde se encuentra
@@ -24,6 +46,8 @@ public:
         void impresionValores();
 
 };
+
+void 
 
 int main()
 {
@@ -37,13 +61,21 @@ int main()
 
     cin >> cantValores;
 
-    auto start = high_resolution_clock::now();
+    auto startIn = high_resolution_clock::now();
     switch (cantValores)
     {
     
 
     case 10:
-        
+
+        cout << "Se insertarán " << cantValores << " aleatorios." << endl;
+
+
+
+        auto stopIn = high_resolution_clock::now();
+        auto durationMilli = duration_cast<milliseconds>(stopIn - startIn);
+        cout << "Le tomo " << durationMilli.count() << " milisegundos\n";
+
         break;
     
     case 100:
@@ -73,9 +105,7 @@ int main()
         break;
     }
 
-    auto stop = high_resolution_clock::now();
-    auto durationMilli = duration_cast<milliseconds>(stop - start);
-    cout << "Le tomo " << durationMilli.count() << " milisegundos\n";
+    
 
     return 0;
 }
