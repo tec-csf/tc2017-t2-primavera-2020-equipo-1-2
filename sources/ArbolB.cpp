@@ -15,7 +15,12 @@ class arbolB{
     arbolB();
     void insertar();
     void busqueda();
-    void eliminar();
+    void eliminar(int posKey)
+    {
+        int remover = 0; // aquí se va a agregar de buscar la posición en donde se encuentra
+
+        
+    }
     void impresionValores();
 
 };
