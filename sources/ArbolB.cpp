@@ -57,7 +57,7 @@ int main()
     //arbolB grados(noGrados);   //Se predefinió que cada grupo va a alojar 5 números.
 
     cout << "¿Cuántos valores quieres que se ingresen al árbol?" << endl;
-    cout << "10\t100\t1000\t10000\t100000\t1000000" << endl;
+    cout << "1) 10\t2) 100\t3) 1000\t4) 10000\t5) 100000\t6) 1000000" << endl;
 
     cin >> cantValores;
 
@@ -66,7 +66,7 @@ int main()
     {
     
 
-    case 10:
+    case 1:
 
         cout << "Se insertarán " << cantValores << " aleatorios." << endl;
 
@@ -78,23 +78,23 @@ int main()
 
         break;
     
-    case 100:
+    case 2:
 
         break;
 
-    case 1000:
+    case 3:
 
         break;
 
-    case 10000:
+    case 4:
 
         break;
 
-    case 100000:
+    case 5:
 
         break;
 
-    case 1000000:
+    case 6:
 
         break;
 
