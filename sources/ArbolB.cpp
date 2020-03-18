@@ -25,6 +25,26 @@ public:
 
     Ramas *busqueda(int nuevo);
 
+    int encontrarLlave(int nuevo);
+
+    void eliminar(int nuevo);
+
+    void eliminarHoja(int index);
+
+    void eliminarPadre(int index);
+
+    void obtenerPredecesor(int index);
+
+    void obternerSucesor(int index);
+
+    void llenar(int index);
+
+    void tomarPrevio(int index);
+
+    void tomarSiguiente(int index);
+
+    void mezclaa(int index);
+
     template <class T>
     friend class arbolB;
 };
@@ -57,11 +77,9 @@ public:
 
     void insertar(int lost);
 
-    void eliminar(int posKey)
-        {
-            int remover = 0; // aquí se va a agregar de buscar la posición en donde se encuentra
-        }
-        void impresionValores();
+    void eliminar(int lost);
+
+    void impresionValores();
 
 };
 
@@ -210,6 +228,59 @@ void Ramas::separaBloque(int i, Ramas *z)
     valores[i] = z->valores[grados-1];
 
     x=x+1;
+}
+int Ramas::encontrarLlave(int nuevo)
+{
+    int i = 0;
+    while(i < x && valores[i]<nuevo)
+    {
+        ++i;
+    }
+    return i;
+}
+void Ramas::eliminar(int lost)
+{
+    int i = encontrarLlave(lost);
+
+    if(i < x && valores[i] == lost) //si es la llave a ser eliminada en el nodo
+    {
+        //si el nodo es un nodo Hoja se llama eliminarHoja, de otra forma eliminarPadre sera llamado
+        if(waraq)
+            eliminarHoja(i);
+        else
+        {
+            eliminarPadre(i);
+        }
+        
+    }
+    else
+    {
+        //si no esta presente y es un nodo hoja entonces no esta presente en el arbol
+        if(waraq)
+        {
+            cout<<"el valor "<<lost << " no existe en el árbol"<<endl;
+            return;
+        }
+        //la bandera ayuda a saber si el valor se encuentra en un subárbol
+        bool bandera = ((i==x)? true : false);
+
+        //si el hijo donde tiene menos valores de grado entonceshay que llenarlo
+        if (apun[i] -> x < grados)
+        {
+            llenar(i);
+        }
+        
+    }
+    
+}
+
+void Ramas::eliminarHoja(int index);
+{
+    for (int i = 0; i < count; i++)
+    {
+        /* code */
+    }
+    
 }
 
 int main(int argc, char const *argv[])
