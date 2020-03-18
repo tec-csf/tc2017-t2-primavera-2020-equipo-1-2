@@ -217,35 +217,54 @@ int main(int argc, char const *argv[])
 
     string inputDoc, nombreArchivo, number;
     fstream inputFile;
-    int nuevoNo;
+    int nuevoNo, noOperaciones;
 
     int noGrados = 5;
     int cantValores;    // Cantidad de valores aleatorios que se insertarán en el Árbol
     arbolB <int> grados(noGrados);   //Se predefinió que cada grupo va a alojar 5 números.
 
+    ofstream inDoc("../examples//OutputInsertion.txt");
+
+    cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
+    cin >> noOperaciones;
+
+    cout << "El tiempo será tomado en microsegundos.\n" << endl;
+
     nombreArchivo = argv[2];
 
     inputFile.open(nombreArchivo.c_str());
 
+    cout << "Número \t\t" << " |" << "\t\tTiempo que le tomó" << endl;
+    cout << "--------------------------------------------------------" << endl;
+
+    inDoc << "Número \t\t" << " |" << "\t\tTiempo que le tomó" << endl;
+    inDoc << "--------------------------------------------------------" << endl;
+
     if (inputFile.is_open())
     {
+        auto startIn = high_resolution_clock::now();
+
         while (getline(inputFile, number))
         {
             nuevoNo = stoi(number);
 
             grados.insertar(nuevoNo);
 
-            cout << "Números: " << nuevoNo << endl;
+            auto stopIn = high_resolution_clock::now();
+            auto durIn = duration_cast<microseconds>(stopIn - startIn);
+
+            cout << "    "<< nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+            inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
         }
         
     }
-    
+    inDoc.close();
     inputFile.close();
 
-    auto startIn = high_resolution_clock::now();
-    
-    auto stopIn = high_resolution_clock::now();
-    auto durationMilli = duration_cast<milliseconds>(stopIn - startIn);
+    cout <<"\nÁrbol reacomodado\n" << endl;
+    grados.atraviesa();
+    cout << endl;
+
 
 
     return 0;
