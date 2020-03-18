@@ -2,19 +2,20 @@
 #include <stdio.h>
 #include <chrono>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 using namespace std::chrono;
 
 class Ramas{
-    int *valores;
-    int grados;
-    Ramas **apun;
-    int x; 
-    bool war; //waraq == hoja (en árabe)
+    int *valores;   //llave de valores
+    int grados;     //definición de grados
+    Ramas **apun;   //apuntadores para manipular los nodos
+    int x;          //número actual de valores
+    bool waraq;       //waraq == hoja (en árabe)
 
 public:
-    Ramas(int grados, bool war );
+    Ramas(int grados_, bool waraq_);
 
     void insertarVacio(int nuevo);
 
@@ -22,23 +23,39 @@ public:
 
     void atraviesa();
 
-    Ramas *busqueda(int lost);
+    Ramas *busqueda(int nuevo);
+
+    friend class arbolB;
 };
 
 template <class T>
 class arbolB{
 
-    NodoArbol *raiz;    //Apuntador al nodo raíz
+    Ramas *raiz;    //Apuntador al nodo raíz
     int grados;         // Valor que define cantidad de números que tendrá el bloque
 
 public:
-    arbolB(int val);
-    void atraviesa(){
+    arbolB(int grados_)
+    {
         raiz = NULL;
-        
+        grados = grados_;
     }
+
+    void atraviesa()
+    {
+        if (raiz != NULL)
+        {
+            raiz->atraviesa();
+        }
+    }//fin atraviesa
+
+    Ramas* busqueda(int lost)
+    {
+        return(raiz == NULL)? NULL : raiz->busqueda(lost);
+    }
+
     void insertar(int nuevo);
-    void busqueda(int lost);
+
     void eliminar(int posKey)
         {
             int remover = 0; // aquí se va a agregar de buscar la posición en donde se encuentra
@@ -47,65 +64,94 @@ public:
 
 };
 
-void 
-
-int main()
+Ramas::Ramas(int val1, bool ramita)
 {
+    grados = val1;
+    waraq = ramita;
+
+    valores = new int[2*grados-1];
+    apun = new Ramas *[2*grados];
+
+    x = 0;
+}
+
+void Ramas::atraviesa()
+{
+    int i;
+    for (i = 0; i < x; i++)
+    {
+        if (waraq == false)
+            apun[i]->atraviesa();
+        cout << " " << valores[i];
+        
+    }
+
+    if(waraq == false)
+        apun[i]->atraviesa();
+    
+}
+
+Ramas *Ramas::busqueda(int nuevo)
+{
+    int i = 0;
+    while (i < x && nuevo > valores[i])
+    {
+        i++;
+    }
+    
+    if (valores[i] == nuevo)
+    {
+        return this;
+    }
+    
+    if (waraq == true)
+    {
+        return NULL;
+    }
+    
+    return apun[i]->busqueda(nuevo);
+}
+
+void arbolB::insertar()
+{
+
+}
+
+int main(int argc, char const *argv[])
+{
+
+    string inputDoc, nombreArchivo, number;
+    fstream inputFile;
+    int nuevoNo;
 
     int noGrados = 5;
     int cantValores;    // Cantidad de valores aleatorios que se insertarán en el Árbol
-    //arbolB grados(noGrados);   //Se predefinió que cada grupo va a alojar 5 números.
+    arbolB grados(noGrados);   //Se predefinió que cada grupo va a alojar 5 números.
 
-    cout << "¿Cuántos valores quieres que se ingresen al árbol?" << endl;
-    cout << "1) 10\t2) 100\t3) 1000\t4) 10000\t5) 100000\t6) 1000000" << endl;
+    nombreArchivo = argv[2];
 
-    cin >> cantValores;
+    inputFile.open(nombreArchivo.c_str());
+
+    if (inputFile.is_open())
+    {
+        while (getline(inputFile, number))
+        {
+            nuevoNo = stoi(number);
+
+            grados.insertar(nuevoNo);
+
+            cout << "Números: " << nuevoNo << endl;
+        }
+        
+    }
+    
+    inputFile.close();
 
     auto startIn = high_resolution_clock::now();
-    switch (cantValores)
-    {
     
+    auto stopIn = high_resolution_clock::now();
+    auto durationMilli = duration_cast<milliseconds>(stopIn - startIn);
 
-    case 1:
-
-        cout << "Se insertarán " << cantValores << " aleatorios." << endl;
-
-
-
-        auto stopIn = high_resolution_clock::now();
-        auto durationMilli = duration_cast<milliseconds>(stopIn - startIn);
-        cout << "Le tomo " << durationMilli.count() << " milisegundos\n";
-
-        break;
-    
-    case 2:
-
-        break;
-
-    case 3:
-
-        break;
-
-    case 4:
-
-        break;
-
-    case 5:
-
-        break;
-
-    case 6:
-
-        break;
-
-    default:
-
-        cout << "Porfavor, seleccione una de las opciones disponibles" << endl;
-
-        break;
-    }
-
-    
 
     return 0;
 }
