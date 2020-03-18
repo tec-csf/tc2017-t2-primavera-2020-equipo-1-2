@@ -124,14 +124,62 @@ void arbolB<class T>::insertar(int lost)
     }
     else
     {
-        if (raiz->x == 2*)
+        if (raiz->x == 2*grados-1)
         {
-            /* code */
+            Ramas *s = new Ramas(grados, false);
+
+            s->apun[0] = raiz;
+
+            s->separaBloque(0, raiz);
+
+            int cont = 0;
+            if (s->valores[0] < lost)
+                cont++;
+            s->apun[cont]->insertarVacio(lost);
+            
+            raiz=s;
+
+        }
+        else
+        {
+            raiz->insertarVacio(lost);
+        }   
+    }
+}
+
+void Ramas::insertarVacio(int lost)
+{
+    int cont = x-1;
+
+    if (waraq == true)
+    {
+        while (cont >= 0 && valores[cont] > lost)
+        {
+            valores[cont+1] = valores[cont];
+            cont--;
         }
         
+        valores[cont+1] = lost;
+        x=x+1;
+    }
+    else
+    {
+        while (cont >= 0 && valores[cont] > lost)
+            cont--;
+
+        if (apun[cont+1]->x == 2*grados-1)
+        {
+            separaBloque(cont+1, apun[cont+1]);
+
+            if (valores[cont+1] < lost)
+            {
+                cont++;
+            }
+            
+        }
+        apun[cont+1]->insertarVacio(lost);
     }
     
-
 }
 
 int main(int argc, char const *argv[])
