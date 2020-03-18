@@ -34,9 +34,9 @@ public:
 
     void eliminarPadre(int index);
 
-    void obtenerPredecesor(int index);
+    int obtenerPredecesor(int index);
 
-    void obternerSucesor(int index);
+    int obternerSucesor(int index);
 
     void llenar(int index);
 
@@ -44,7 +44,7 @@ public:
 
     void tomarSiguiente(int index);
 
-    void mezclaa(int index);
+    void mezclar(int index);
 
     template <class T>
     friend class arbolB;
@@ -307,7 +307,7 @@ void Ramas::eliminarPadre(int index)
     {
         int sucesor = obternerSucesor(index);
         valores[index] = sucesor;
-        apun[index+1]-> eliminar[sucesor];
+        apun[index+1] -> eliminar(sucesor);
     }
     //si ambos tienen el mismo tamñano se mezclan haciendo que el apun ahora tenga
     //2*grados -1 valores
@@ -320,6 +320,176 @@ void Ramas::eliminarPadre(int index)
     return;
 }
 
+int Ramas::obtenerPredecesor(int index)
+{
+    Ramas *md = apun[index];
+    //se movera todo hacia la derecha hasta que se encuentre una hoja
+    while(!md -> waraq) //md es moviendo derecha
+    {
+        md = md -> apun[md->x];
+    }
+    return md -> valores[md->x-1]; //regresa el ultimo valor de la hoja
+}
+
+int Ramas::obternerSucesor(int index)
+{
+    Ramas *mi = apun[index+1];
+    //se movera todo hacia la izquiera empezando por index+1 hasta encontrar hoja
+    while (!mi->waraq)
+    {
+        mi = mi->apun[0];
+    }
+    return mi -> valores[0]; //regresa el primer valor de la hoja
+    
+}
+
+void Ramas::llenar(int index)
+{
+    //si el hijo previo tiene más de grados+1 valores pedir de esa hoja hijo
+    if(index!=0 && apun[index-1]->x>=grados)
+    {
+        tomarPrevio(index);
+    }
+    // si el hijo siguiente tiene más de grados+1 valores, pedir del siguiente
+    else if (index != x && apun[index+1]->x >= grados)
+    {
+        tomarSiguiente(index);
+    }
+    //de otra forma se mezcla con el previo si es el ultimo hijo o se mezcla con su siguiente hermano
+    else
+    {
+        if (index != x)
+        {
+            mezclar(index);
+        }
+        else
+        {
+            mezclar(index-1);
+        }
+        
+    }
+    return;
+}
+void Ramas::tomarPrevio(int index)
+{
+    Ramas *hijo = apun[index];
+    Ramas *hermano = apun[index - 1];
+
+    for (int i = hijo->x-1; i >= 0; --i)
+    {
+        hijo->valores[i+1] = hijo->valores[i];
+    }
+    if (!hijo -> waraq)
+    {
+        for (int i= hijo->x; i >=0; --i)
+        {
+            hijo->apun[i+1] = hijo->apun[i];
+        }
+    }
+    hijo->valores[0] = valores[index-1];
+
+    if(!hijo->waraq)
+    {
+        hijo->apun[0] = hermano->apun[hermano->x-1];
+    }
+    valores[index-1] = hermano->valores[hermano->x-1];
+
+    hijo->x += 1;
+    hermano -> x -= 1;
+    return;
+}
+void Ramas::tomarSiguiente(int index)
+{
+    Ramas *hijo = apun[index];
+    Ramas *hermano = apun[index+1];
+
+    hijo-> valores[(hijo->x)] = valores[index];
+
+    if(!(hijo->waraq))
+    {
+        hijo->apun[(hijo->x)+1] = hermano -> apun[0];
+    }
+    valores[index] = hermano ->valores[0];
+
+    for (int i = 1; i < hermano->x; ++i)
+    {
+        hermano->valores[i-1] = hermano -> valores[i];
+    }
+    if (!hermano->waraq)
+    {
+        for (int i = 1; i <= hermano->x; ++i)
+        {
+            hermano->apun[i-1] = hermano-> apun[i];
+        }
+        
+    }
+
+    hijo -> x +=1;
+    hermano -> x -=1;
+
+    return;
+}
+
+void Ramas::mezclar(int index)
+{
+    Ramas *hijo = apun[index];
+    Ramas *hermano = apun[index+1];
+
+    hijo -> valores[grados-1] = valores[index];
+
+    for(int i=0; i<hermano->x; ++i)
+    {
+        hijo->valores[i+grados] = hermano->valores[i];
+    }
+    if (!hijo->waraq) 
+	{ 
+		for(int i=0; i<=hermano->x; ++i) 
+			hijo->apun[i+grados] = hermano->apun[i]; 
+	} 
+    for (int i=index+1; i<x; ++i) 
+    {
+        valores[i-1] = valores[i]; 
+    }
+
+    for (int i=index+2; i<=x; ++i)
+    {
+		apun[i-1] = apun[i]; 
+    }
+
+    hijo->x += hermano->x+1;
+    x--;
+
+    delete(hermano);
+    return;
+}
+
+template <>
+void arbolB<int>::eliminar(int lost)
+{
+    if (!raiz)
+    {
+        cout<<"el árbol esta vacío\n"<<endl;
+        return;
+    }
+
+    raiz->eliminar(lost);
+
+    if(raiz ->x == 0)
+    {
+        Ramas * tmp = raiz;
+        if(raiz -> waraq)
+        {
+            raiz = NULL;
+        }
+        else
+        {
+            raiz = raiz-> apun[0];
+        }
+
+        delete tmp;
+    }
+    return;
+}
 int main(int argc, char const *argv[])
 {
 
