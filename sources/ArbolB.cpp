@@ -269,14 +269,24 @@ void Ramas::eliminar(int lost)
         {
             llenar(i);
         }
-        
+
+        //usamos recursividad para mezclar en la hoja i-1. 
+        //Si no, usamos recursividad en la hoja i que ahora tendría valores en grados 
+        if(bandera && i > x)
+        {
+            apun[i-1]->eliminar(lost);
+        }
+        else
+        {
+            apun[i]-> eliminar(lost);
+        }
     }
-    
+    return;
 }
 
-void Ramas::eliminarHoja(int index);
+void Ramas::eliminarHoja(int index)
 {
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < 10; i++)
     {
         /* code */
     }
