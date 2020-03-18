@@ -217,7 +217,7 @@ int main(int argc, char const *argv[])
 
     string inputDoc, nombreArchivo, number;
     fstream inputFile;
-    int nuevoNo, noOperaciones;
+    int nuevoNo, noOperaciones, lost;
 
     int noGrados = 5;
     int cantValores;    // Cantidad de valores aleatorios que se insertarán en el Árbol
@@ -265,7 +265,10 @@ int main(int argc, char const *argv[])
     grados.atraviesa();
     cout << endl;
 
+    int lost;
+    (grados.busqueda(lost) != NULL) ? cout << "\nPresent\n" : cout << "\nNot Present";
 
+    
 
     return 0;
 }
