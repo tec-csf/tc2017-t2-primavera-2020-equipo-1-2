@@ -54,7 +54,7 @@ public:
         return(raiz == NULL)? NULL : raiz->busqueda(lost);
     }
 
-    void insertar(int nuevo);
+    void insertar(int lost);
 
     void eliminar(int posKey)
         {
@@ -112,9 +112,25 @@ Ramas *Ramas::busqueda(int nuevo)
     return apun[i]->busqueda(nuevo);
 }
 template<>
-void arbolB<class T>::insertar(int nuevo)
+void arbolB<class T>::insertar(int lost)
 {
     
+    if (raiz == NULL)
+    {
+        raiz = new Ramas(grados, true);
+        raiz->valores[1] = lost;
+        raiz->x = 1;
+    }
+    else
+    {
+        if (raiz->x == 2*)
+        {
+            /* code */
+        }
+        
+    }
+    
+
 }
 
 int main(int argc, char const *argv[])
