@@ -274,13 +274,8 @@ void Ramas::eliminar(int lost)
     
 }
 
-void Ramas::eliminarHoja(int index);
-{
-    for (int i = 0; i < count; i++)
-    {
-        /* code */
-    }
-    
+void Ramas::eliminarPadre(int index){
+
 }
 
 int main(int argc, char const *argv[])
@@ -288,7 +283,7 @@ int main(int argc, char const *argv[])
 
     string inputDoc, nombreArchivo, number;
     fstream inputFile;
-    int nuevoNo, noOperaciones, lost;
+    int nuevoNo, noOperaciones, perdu;
 
     int noGrados = 5;
     int cantValores;    // Cantidad de valores aleatorios que se insertarán en el Árbol
@@ -298,6 +293,8 @@ int main(int argc, char const *argv[])
 
     cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
     cin >> noOperaciones;
+
+    srand((unsigned)time(0));
 
     cout << "El tiempo será tomado en microsegundos.\n" << endl;
 
@@ -336,10 +333,17 @@ int main(int argc, char const *argv[])
     grados.atraviesa();
     cout << endl;
 
-    int lost;
-    (grados.busqueda(lost) != NULL) ? cout << "\nPresent\n" : cout << "\nNot Present";
+    cout << "Número \t\t" << " |" << "¿Se encontró?" << " |" << "\t\tTiempo que le tomó" << endl;
 
+    int lost;
+
+    for (int cont = 0; cont < noOperaciones; cont++)
+    {
+        (grados.busqueda(lost) != NULL) ? cout << "\t\tEncontrado\n" : cout << "\t\tNo se encontró";
+    }
     
+
+
 
     return 0;
 }
