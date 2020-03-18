@@ -2,7 +2,6 @@ compiler: gcc
 language: cpp
 script:
     - cd sources
-    - g++ -o AVL ArbolAVL.cpp -std=c++17
+    - g++ -o AVL ArbolAVL.cpp -std=c++17 && g++ -o AB ArbolB.cpp -std=c++17
     - ./AVL
-    - g++ -o AB ArbolB.cpp -std=c++17
     - ./AB

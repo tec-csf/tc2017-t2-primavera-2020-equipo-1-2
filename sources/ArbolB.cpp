@@ -113,7 +113,7 @@ Ramas *Ramas::busqueda(int nuevo)
     return apun[i]->busqueda(nuevo);
 }
 template<>
-void arbolB<class T>::insertar(int lost)
+void arbolB<int>::insertar(int lost)
 {
     
     if (raiz == NULL)
