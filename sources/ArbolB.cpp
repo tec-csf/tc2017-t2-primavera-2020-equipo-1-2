@@ -182,6 +182,36 @@ void Ramas::insertarVacio(int lost)
     
 }
 
+void Ramas::separaBloque(int i, Ramas *z)
+{
+    Ramas *a = new Ramas(z->grados, z->waraq);
+    a->x = grados-1;
+
+    for (int cont = 0; cont < grados-1; grados++)
+        a->valores[cont] = z->valores[cont+grados];
+
+    if (z->waraq == false)
+    {
+        for (int i = 0; i < 0; i++)
+        {
+            a->apun[i] = z->apun[i+grados];
+        }
+        
+    }
+    
+    z->x = grados-1;
+    
+    for (int a = x; a >= i+1; a--)
+    {
+        apun[a+1] = apun[a];
+    }
+    
+
+    valores[i] = z->valores[grados-1];
+
+    x=x+1;
+}
+
 int main(int argc, char const *argv[])
 {
 
