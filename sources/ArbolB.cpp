@@ -353,36 +353,42 @@ int main(int argc, char const *argv[])
     inDoc.close();
     inputFile.close();
 
-    cout << "\nÁrbol reacomodado\n"
+    cout << "\n\nInicio de búsqueda\n"
          << endl;
-    grados.atraviesa();
-    cout << endl;
-
-    cout << "Número \t\t" << " |" << "¿Se encontró?" << " |" << "\t\tTiempo que le tomó" << endl;
 
     int lost;
+
+    cout << "Número \t\t"
+         << " |"
+         << "\t\t¿Se encontró?\t\t"
+         << " |"
+         << "\t\tTiempo que le tomó" << endl;
+    cout << "------------------------------------------------------------------------------------------------------" << endl;
 
     auto startBus = high_resolution_clock::now();
 
     for (int cont = 0; cont < noOperaciones; cont++)
     {
-        lost = (rand() % noOperaciones) + 1;
+        lost = rand() % noOperaciones + 1;
 
-        cout << lost << endl;
+        //cout << lost << endl;
 
         if (grados.busqueda(lost) != NULL)
         {
             auto stopBus = high_resolution_clock::now();
             auto durBus = duration_cast<microseconds>(stopBus - startBus);
-            cout << "    " << lost << "\t\t | \t\t" << "Encontrado" << "\t\t | \t\t" << durBus.count() << endl;
-        }else
+            cout << "    " << lost << "\t\t | \t\t"
+                 << "Encontrado"
+                 << "\t\t | \t\t" << durBus.count() << endl;
+        }
+        else
         {
             auto stopBus = high_resolution_clock::now();
             auto durBus = duration_cast<microseconds>(stopBus - startBus);
-            cout << "    " << lost << "\t\t | \t\t" << "No se encontró" << "\t\t | \t\t" << durBus.count() << endl;
+            cout << "    " << lost << "\t\t | \t\t"
+                 << "No se encontró"
+                 << "\t\t | \t\t" << durBus.count() << endl;
         }
-
-        cont++;
     }
 
     return 0;
