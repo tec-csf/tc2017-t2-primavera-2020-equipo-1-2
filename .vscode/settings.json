@@ -3,7 +3,8 @@
     "files.associations": {
         "iosfwd": "cpp",
         "fstream": "cpp",
-        "locale": "cpp"
+        "locale": "cpp",
+        "chrono": "cpp"
     },
     "cSpell.words": [
         "insertar",
