@@ -25,7 +25,7 @@ public:
 
     Ramas *busqueda(int nuevo);
 
-    friend class arbolB;
+    //friend class arbolB;
 };
 
 template <class T>
@@ -126,7 +126,7 @@ int main(int argc, char const *argv[])
 
     int noGrados = 5;
     int cantValores;    // Cantidad de valores aleatorios que se insertarán en el Árbol
-    arbolB grados(noGrados);   //Se predefinió que cada grupo va a alojar 5 números.
+    arbolB <int> grados(noGrados);   //Se predefinió que cada grupo va a alojar 5 números.
 
     nombreArchivo = argv[2];
 
