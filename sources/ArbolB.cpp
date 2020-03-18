@@ -25,7 +25,8 @@ public:
 
     Ramas *busqueda(int nuevo);
 
-    //friend class arbolB;
+    template <class T>
+    friend class arbolB;
 };
 
 template <class T>
