@@ -291,11 +291,33 @@ void Ramas::eliminarHoja(int index)
 
 void Ramas::eliminarPadre(int index)
 {
-    int val = valores[index];
 
+    int val = valores[index];
+    //si la hoja predecesora tiene subarboles entonces se encontrará
+    //el predecesor y se rotara, eliminara y todo jejeje.
     if (apun[index]->x >= grados)
     {
+        int pred = obtenerPredecesor(index);
+        valores[index] = pred;
+        apun[index] -> eliminar(pred);
     }
+    //si el hijo tiene menos grados y no tiene subarboles y lo que sigue tiene subárboles 
+    //Se encuentra el sucesor y se remplace el valor por el sucesor y se elimina sucesor del apuntador
+    else if( apun[index+1]-> x >= grados)
+    {
+        int sucesor = obternerSucesor(index);
+        valores[index] = sucesor;
+        apun[index+1]-> eliminar[sucesor];
+    }
+    //si ambos tienen el mismo tamñano se mezclan haciendo que el apun ahora tenga
+    //2*grados -1 valores
+    //después se libera y elimina
+    else
+    {
+        mezclar(index);
+        apun[index] -> eliminar(val);
+    }
+    return;
 }
 
 int main(int argc, char const *argv[])
