@@ -112,9 +112,9 @@ Ramas *Ramas::busqueda(int nuevo)
     return apun[i]->busqueda(nuevo);
 }
 
-void arbolB::insertar()
+void arbolB <int>::insertar(int nuevo)
 {
-
+    
 }
 
 int main(int argc, char const *argv[])
