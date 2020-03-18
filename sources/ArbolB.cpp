@@ -7,12 +7,13 @@
 using namespace std;
 using namespace std::chrono;
 
-class Ramas{
-    int *valores;   //llave de valores
-    int grados;     //definición de grados
-    Ramas **apun;   //apuntadores para manipular los nodos
-    int x;          //número actual de valores
-    bool waraq;       //waraq == hoja (en árabe)
+class Ramas
+{
+    int *valores; //llave de valores
+    int grados;   //definición de grados
+    Ramas **apun; //apuntadores para manipular los nodos
+    int x;        //número actual de valores
+    bool waraq;   //waraq == hoja (en árabe)
 
 public:
     Ramas(int grados_, bool waraq_);
@@ -50,10 +51,11 @@ public:
 };
 
 template <class T>
-class arbolB{
+class arbolB
+{
 
-    Ramas *raiz;    //Apuntador al nodo raíz
-    int grados;         // Valor que define cantidad de números que tendrá el bloque
+    Ramas *raiz; //Apuntador al nodo raíz
+    int grados;  // Valor que define cantidad de números que tendrá el bloque
 
 public:
     arbolB(int grados_)
@@ -68,11 +70,11 @@ public:
         {
             raiz->atraviesa();
         }
-    }//fin atraviesa
+    } //fin atraviesa
 
-    Ramas* busqueda(int lost)
+    Ramas *busqueda(int lost)
     {
-        return(raiz == NULL)? NULL : raiz->busqueda(lost);
+        return (raiz == NULL) ? NULL : raiz->busqueda(lost);
     }
 
     void insertar(int lost);
@@ -80,7 +82,6 @@ public:
     void eliminar(int lost);
 
     void impresionValores();
-
 };
 
 Ramas::Ramas(int val1, bool ramita)
@@ -88,8 +89,8 @@ Ramas::Ramas(int val1, bool ramita)
     grados = val1;
     waraq = ramita;
 
-    valores = new int[2*grados-1];
-    apun = new Ramas *[2*grados];
+    valores = new int[2 * grados - 1];
+    apun = new Ramas *[2 * grados];
 
     x = 0;
 }
@@ -102,12 +103,10 @@ void Ramas::atraviesa()
         if (waraq == false)
             apun[i]->atraviesa();
         cout << " " << valores[i];
-        
     }
 
-    if(waraq == false)
+    if (waraq == false)
         apun[i]->atraviesa();
-    
 }
 
 Ramas *Ramas::busqueda(int nuevo)
@@ -117,23 +116,23 @@ Ramas *Ramas::busqueda(int nuevo)
     {
         i++;
     }
-    
+
     if (valores[i] == nuevo)
     {
         return this;
     }
-    
+
     if (waraq == true)
     {
         return NULL;
     }
-    
+
     return apun[i]->busqueda(nuevo);
 }
-template<>
+template <>
 void arbolB<int>::insertar(int lost)
 {
-    
+
     if (raiz == NULL)
     {
         raiz = new Ramas(grados, true);
@@ -142,7 +141,7 @@ void arbolB<int>::insertar(int lost)
     }
     else
     {
-        if (raiz->x == 2*grados-1)
+        if (raiz->x == 2 * grados - 1)
         {
             Ramas *s = new Ramas(grados, false);
 
@@ -154,85 +153,80 @@ void arbolB<int>::insertar(int lost)
             if (s->valores[0] < lost)
                 cont++;
             s->apun[cont]->insertarVacio(lost);
-            
-            raiz=s;
 
+            raiz = s;
         }
         else
         {
             raiz->insertarVacio(lost);
-        }   
+        }
     }
 }
 
 void Ramas::insertarVacio(int lost)
 {
-    int cont = x-1;
+    int cont = x - 1;
 
     if (waraq == true)
     {
         while (cont >= 0 && valores[cont] > lost)
         {
-            valores[cont+1] = valores[cont];
+            valores[cont + 1] = valores[cont];
             cont--;
         }
-        
-        valores[cont+1] = lost;
-        x=x+1;
+
+        valores[cont + 1] = lost;
+        x = x + 1;
     }
     else
     {
         while (cont >= 0 && valores[cont] > lost)
             cont--;
 
-        if (apun[cont+1]->x == 2*grados-1)
+        if (apun[cont + 1]->x == 2 * grados - 1)
         {
-            separaBloque(cont+1, apun[cont+1]);
+            separaBloque(cont + 1, apun[cont + 1]);
 
-            if (valores[cont+1] < lost)
+            if (valores[cont + 1] < lost)
             {
                 cont++;
             }
-            
         }
-        apun[cont+1]->insertarVacio(lost);
+        apun[cont + 1]->insertarVacio(lost);
     }
-    
 }
 
 void Ramas::separaBloque(int i, Ramas *z)
 {
     Ramas *a = new Ramas(z->grados, z->waraq);
-    a->x = grados-1;
+    a->x = grados - 1;
 
-    for (int cont = 0; cont < grados-1; grados++)
-        a->valores[cont] = z->valores[cont+grados];
+    for (int cont = 0; cont < grados - 1; grados++)
+        a->valores[cont] = z->valores[cont + grados];
 
     if (z->waraq == false)
     {
         for (int i = 0; i < 0; i++)
         {
-            a->apun[i] = z->apun[i+grados];
+            a->apun[i] = z->apun[i + grados];
         }
-        
     }
-    
-    z->x = grados-1;
-    
-    for (int a = x; a >= i+1; a--)
+
+    z->x = grados - 1;
+
+    for (int a = x; a >= i + 1; a--)
     {
-        apun[a+1] = apun[a];
+        apun[a + 1] = apun[a];
     }
-    
 
-    valores[i] = z->valores[grados-1];
+    valores[i] = z->valores[grados - 1];
 
-    x=x+1;
+    x = x + 1;
 }
 int Ramas::encontrarLlave(int nuevo)
 {
     int i = 0;
-    while(i < x && valores[i]<nuevo)
+    while (i < x && valores[i] < nuevo)
     {
         ++i;
     }
@@ -242,40 +236,66 @@ void Ramas::eliminar(int lost)
 {
     int i = encontrarLlave(lost);
 
-    if(i < x && valores[i] == lost) //si es la llave a ser eliminada en el nodo
+    if (i < x && valores[i] == lost) //si es la llave a ser eliminada en el nodo
     {
         //si el nodo es un nodo Hoja se llama eliminarHoja, de otra forma eliminarPadre sera llamado
-        if(waraq)
+        if (waraq)
             eliminarHoja(i);
         else
         {
             eliminarPadre(i);
         }
-        
     }
     else
     {
         //si no esta presente y es un nodo hoja entonces no esta presente en el arbol
-        if(waraq)
+        if (waraq)
         {
-            cout<<"el valor "<<lost << " no existe en el árbol"<<endl;
+            cout << "el valor " << lost << " no existe en el árbol" << endl;
             return;
         }
         //la bandera ayuda a saber si el valor se encuentra en un subárbol
-        bool bandera = ((i==x)? true : false);
+        bool bandera = ((i == x) ? true : false);
 
         //si el hijo donde tiene menos valores de grado entonceshay que llenarlo
-        if (apun[i] -> x < grados)
+        if (apun[i]->x < grados)
         {
             llenar(i);
         }
-        
+
+        //usamos recursividad para mezclar en la hoja i-1.
+        //Si no, usamos recursividad en la hoja i que ahora tendría valores en grados
+        if (bandera && i > x)
+        {
+            apun[i - 1]->eliminar(lost);
+        }
+        else
+        {
+            apun[i]->eliminar(lost);
+        }
     }
-    
+    return;
 }
 
-void Ramas::eliminarPadre(int index){
+void Ramas::eliminarHoja(int index)
+{
+    //mueve todas las llaaves después de la posición index una posición en reversa
+    for (int i = index + 1; i < x; ++i)
+    {
+        valores[i - 1] = valores[i];
+    }
+    //reduce el conteo de valores
+    x--;
+    return;
+}
 
+void Ramas::eliminarPadre(int index)
+{
+    int val = valores[index];
+
+    if (apun[index]->x >= grados)
+    {
+    }
 }
 
 int main(int argc, char const *argv[])
@@ -286,8 +306,8 @@ int main(int argc, char const *argv[])
     int nuevoNo, noOperaciones, perdu;
 
     int noGrados = 5;
-    int cantValores;    // Cantidad de valores aleatorios que se insertarán en el Árbol
-    arbolB <int> grados(noGrados);   //Se predefinió que cada grupo va a alojar 5 números.
+    int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
+    arbolB<int> grados(noGrados); //Se predefinió que cada grupo va a alojar 5 números.
 
     ofstream inDoc("../examples//OutputInsertion.txt");
 
@@ -296,16 +316,21 @@ int main(int argc, char const *argv[])
 
     srand((unsigned)time(0));
 
-    cout << "El tiempo será tomado en microsegundos.\n" << endl;
+    cout << "El tiempo será tomado en microsegundos.\n"
+         << endl;
 
     nombreArchivo = argv[2];
 
     inputFile.open(nombreArchivo.c_str());
 
-    cout << "Número \t\t" << " |" << "\t\tTiempo que le tomó" << endl;
+    cout << "Número \t\t"
+         << " |"
+         << "\t\tTiempo que le tomó" << endl;
     cout << "--------------------------------------------------------" << endl;
 
-    inDoc << "Número \t\t" << " |" << "\t\tTiempo que le tomó" << endl;
+    inDoc << "Número \t\t"
+          << " |"
+          << "\t\tTiempo que le tomó" << endl;
     inDoc << "--------------------------------------------------------" << endl;
 
     if (inputFile.is_open())
@@ -321,15 +346,15 @@ int main(int argc, char const *argv[])
             auto stopIn = high_resolution_clock::now();
             auto durIn = duration_cast<microseconds>(stopIn - startIn);
 
-            cout << "    "<< nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+            cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
             inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
         }
-        
     }
     inDoc.close();
     inputFile.close();
 
-    cout <<"\nÁrbol reacomodado\n" << endl;
+    cout << "\nÁrbol reacomodado\n"
+         << endl;
     grados.atraviesa();
     cout << endl;
 
@@ -337,13 +362,28 @@ int main(int argc, char const *argv[])
 
     int lost;
 
+    auto startBus = high_resolution_clock::now();
+
     for (int cont = 0; cont < noOperaciones; cont++)
     {
-        (grados.busqueda(lost) != NULL) ? cout << "\t\tEncontrado\n" : cout << "\t\tNo se encontró";
+        lost = (rand() % noOperaciones) + 1;
+
+        cout << lost << endl;
+
+        if (grados.busqueda(lost) != NULL)
+        {
+            auto stopBus = high_resolution_clock::now();
+            auto durBus = duration_cast<microseconds>(stopBus - startBus);
+            cout << "    " << lost << "\t\t | \t\t" << "Encontrado" << "\t\t | \t\t" << durBus.count() << endl;
+        }else
+        {
+            auto stopBus = high_resolution_clock::now();
+            auto durBus = duration_cast<microseconds>(stopBus - startBus);
+            cout << "    " << lost << "\t\t | \t\t" << "No se encontró" << "\t\t | \t\t" << durBus.count() << endl;
+        }
+
+        cont++;
     }
-    
-
-
 
     return 0;
 }
