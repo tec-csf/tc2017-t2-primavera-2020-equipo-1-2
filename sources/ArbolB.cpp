@@ -286,11 +286,24 @@ void Ramas::eliminar(int lost)
 
 void Ramas::eliminarHoja(int index)
 {
-    for (int i = 0; i < 10; i++)
+    //mueve todas las llaaves después de la posición index una posición en reversa
+    for (int i = index+1; i < x; ++i)
     {
-        /* code */
+        valores[i-1] = valores[i];
     }
-    
+    //reduce el conteo de valores
+    x--;
+    return;
+}
+
+void Ramas::eliminarPadre(int index)
+{
+    int val = valores[index];
+
+    if(apun[index]-> x >= grados)
+    {
+
+    }
 }
 
 int main(int argc, char const *argv[])
