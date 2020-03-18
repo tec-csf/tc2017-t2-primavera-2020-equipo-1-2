@@ -111,8 +111,8 @@ Ramas *Ramas::busqueda(int nuevo)
     
     return apun[i]->busqueda(nuevo);
 }
-
-void arbolB <int>::insertar(int nuevo)
+template<>
+void arbolB<class T>::insertar(int nuevo)
 {
     
 }

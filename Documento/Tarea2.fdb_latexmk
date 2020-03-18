@@ -6,9 +6,9 @@
   (generated)
   "Tarea2.blg"
   "Tarea2.bbl"
-["pdflatex"] 1584473815 "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.tex" "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.pdf" "Tarea2" 1584473815
-  "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.aux" 1584473815 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.tex" 1584473768 25592 b71f27f53518b16e7199b759a00acb9a ""
+["pdflatex"] 1584495824 "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.tex" "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.pdf" "Tarea2" 1584495824
+  "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.aux" 1584495824 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.tex" 1584495820 26251 8642e5c1605972b4e4e2aa3e36535e57 ""
   "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/sample-franklin" 0 -1 0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc" 1455236391 7311 f1482de29b79cbe9ecc4861d6c55e906 ""
@@ -220,14 +220,14 @@
   "Tarea2.aux" 0 -1 0 "pdflatex"
   "Tarea2.bbl" 0 -1 0 "bibtex Tarea2"
   "Tarea2.out" 0 -1 0 "pdflatex"
-  "Tarea2.tex" 1584473768 25592 b71f27f53518b16e7199b759a00acb9a ""
+  "Tarea2.tex" 1584495820 26251 8642e5c1605972b4e4e2aa3e36535e57 ""
   "comment.cut" 0 -1 0 "pdflatex"
   "sample-franklin" 0 -1 0 ""
   (generated)
+  "Tarea2.aux"
   "comment.cut"
-  "Tarea2.log"
   "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.log"
+  "Tarea2.log"
+  "Tarea2.out"
   "Tarea2.pdf"
   "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.pdf"
-  "Tarea2.aux"
-  "Tarea2.out"

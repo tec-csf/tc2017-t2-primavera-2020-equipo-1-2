@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.15)  17 MAR 2020 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.15)  17 MAR 2020 19:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -830,7 +830,6 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 71.
 LaTeX Info: Redefining \pageref on input line 71.
 LaTeX Info: Redefining \nameref on input line 71.
- (/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out) (/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out)
 \@outlinefile=\write4
 \openout4 = `Tarea2.out'.
 
@@ -941,6 +940,9 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 144.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 144.
+
+LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 144.
+
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 144.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -998,8 +1000,14 @@ Overfull \hbox (5.63254pt too wide) in paragraph at lines 351--355
 \T1/LinuxLibertineT-TLF/m/n/10 (-20) Your work should use stan-dard L[]T[]X sec-tion-ing com-mands: [][]\T1/zi4/m/n/10 section[]\T1/LinuxLibertineT-TLF/m/n/10 (-20) , [][]\T1/zi4/m/n/10 subsection[]\T1/LinuxLibertineT-TLF/m/n/10 (-20) , [][]\T1/zi4/m/n/10 subsubsection[]\T1/LinuxLibertineT-TLF/m/n/10 (-20) , and [][]\T1/zi4/m/n/10 paragraph[]\T1/LinuxLibertineT-TLF/m/n/10 (-20) .
  []
 
+
+LaTeX Warning: Reference `tab:freq' on page 4 undefined on input line 378.
+
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 383.
+
+LaTeX Warning: Reference `tab:commands' on page 4 undefined on input line 402.
+
 [4.4]
 
 Package natbib Warning: Citation `Lamport:LaTeX' on page 5 undefined on input line 432.
@@ -1137,4 +1145,52 @@ Package natbib Warning: Citation `CTANacmart' on page 6 undefined on input line 
 Package natbib Warning: Citation `R' on page 6 undefined on input line 558.
 
 
-Package natbib Warning: Citation `UMassCitations' on page 6 undefined on
+Package natbib Warning: Citation `UMassCitations' on page 6 undefined on input line 558.
+
+[6.6] Processing 'acks' comment.
+\openout3 = `comment.cut'.
+
+ Comment 'acks' writing to comment.cut. Straight input of comment.cut. (/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/comment.cut)
+No file Tarea2.bbl.
+[7.7]
+
+Package natbib Warning: There were undefined citations.
+
+[8.8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 656.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 656.
+ (/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 656.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 656.
+
+
+Package rerunfilecheck Warning: File `Tarea2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Tarea2.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  58A831E4DC7235799C7AD4C215760379;4033.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 18117 strings out of 492616
+ 273876 string characters out of 6129481
+ 387871 words of memory out of 5000000
+ 21232 multiletter control sequences out of 15000+600000
+ 157366 words of font info for 279 fonts, out of 8000000 for 9000
+ 1302 hyphenation exceptions out of 8191
+ 60i,12n,94p,885b,647s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_afusau.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/fxlri-7letters.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/zxlr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
+Output written on "/Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.pdf" (8 pages, 520513 bytes).
+PDF statistics:
+ 188 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 48141 words of extra memory for PDF output out of 51595 (max. 10000000)
+

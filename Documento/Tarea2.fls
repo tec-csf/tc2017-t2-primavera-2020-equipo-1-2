@@ -223,12 +223,6 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT /Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out
-INPUT /Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out
-INPUT /Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out
-INPUT /Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out
-INPUT /Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out
-INPUT /Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out
 OUTPUT /Users/Katia/Desktop/TEC/GIT ALGORITMOS/tc2017-t2-primavera-2020-equipo-1-2/Documento/Tarea2.out
 INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -412,3 +406,12 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.e
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/fxlri-7letters.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/txsys.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/zxlr.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/zxlri.pfb
