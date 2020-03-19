@@ -1,5 +1,5 @@
 /*
- *  Arbol B - Seguna Tarea
+ *  Arbol B - Segunda Tarea
  * 
  *  Análisis y diseño de algoritmos
  *  Fecha de entrega:
