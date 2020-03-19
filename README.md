@@ -43,6 +43,7 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 *[Incluya aquí una explicación de la solución implementada]*
 
 ### 2.1 Pasos a seguir para utilizar la aplicación
+*[Incluya aquí una guía paso a paso para poder utilizar la aplicación, desde la clonación del repositorio, la compilación del código hasta la ejecución de los ejemplos para visualizar los resultados.]*
 * Contar con acceso a internet
 * Contar con una terminal
 	* La terminal debe tener gcc instalado
@@ -56,10 +57,10 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 #### Para correr el programa
 1. Mediante la terminal, navegar a la carpeta sources
-2. Correr el comando: `g++ -o `
-3. Correr el comando: ``
-
-*[Incluya aquí una guía paso a paso para poder utilizar la aplicación, desde la clonación del repositorio, la compilación del código hasta la ejecución de los ejemplos para visualizar los resultados.]*
+2. Correr el comando: `g++ -o AB ArbolB.cpp -std=c++17`
+3. Correr el comando: `./AB -i ../examples/diez.txt`
+4. Correr el comando: `g++ -o AVL ArbolAVL.cpp -std=c++17`
+5. Correr el comando: `./AVL`
 
 ## 3. Referencias
 > https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
