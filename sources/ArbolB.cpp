@@ -450,15 +450,16 @@ int main(int argc, char const *argv[])
     string inputDoc, nombreArchivo, number;
     fstream inputFile;
 
-    int nuevoNo, noOperaciones = 10, perdu;
+    int nuevoNo, noOperaciones, perdu;
     int cantValores; // Cantidad de valores aleatorios que se insertarán en el Árbol
 
-    ofstream inDoc("OutputInsertion.txt");
-    ofstream searchDoc("OutputSearch.txt");
-    ofstream delDoc("OutputDelete.txt");
+    ofstream inDoc("OutputInsertionMillon.txt");
+    ofstream searchDoc("OutputSearchMillon.txt");
+    ofstream delDoc("OutputDeleteMillon.txt");
 
     cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
-    cout << "Se insertó " << noOperaciones << " por default." << endl;
+    cin >> noOperaciones;
+    //cout << "Se insertó " << noOperaciones << " por default." << endl;
 
     srand((unsigned)time(0));
 
@@ -506,6 +507,9 @@ int main(int argc, char const *argv[])
         auto durP1 = duration_cast<microseconds>(stopP1 - startP1);
 
         cout << "Le demoró: " << durP1.count() << " microsegundos en insertar " << noOperaciones << "valores\n"
+             << endl;
+
+        inDoc << "Le demoró: " << durP1.count() << " microsegundos en insertar " << noOperaciones << "valores\n"
              << endl;
 
         //cout << "Sale del ciclo" << endl;
@@ -582,6 +586,10 @@ int main(int argc, char const *argv[])
     searchDoc << "Le demoró: " << durP2.count() << " microsegundos en buscar " << noOperaciones << " valores\n"
               << endl;
 
+
+    searchDoc.close();
+
+
     cout << "\n\nComienza el proceso de eliminación\n"
          << endl;
 
@@ -623,6 +631,8 @@ int main(int argc, char const *argv[])
 
     delDoc << "Le demoró: " << durP3.count() << " microsegundos en borrar " << noOperaciones << " valores\n"
          << endl;
+
+    delDoc.close();
 
     cout << "\nUna vez que se eliminó un valor en el árbol:";
     grados.atraviesa();
