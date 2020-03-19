@@ -422,7 +422,7 @@ void arbolB<int>::eliminar(int k)
 {
     if (!raiz)
     {
-        cout << "The tree is empty\n";
+        cout << "El árbol está vacío\n";
         return;
     }
 
@@ -469,6 +469,11 @@ int main(int argc, char const *argv[])
 
     inputFile.open(nombreArchivo.c_str());
 
+    cout << "Comienza a insertar valores\n"
+         << endl;
+
+    inDoc << "Comienza a insertar valores" << endl;
+
     cout << "Número \t\t"
          << " |"
          << "\t\tTiempo que le tomó" << endl;
@@ -483,6 +488,8 @@ int main(int argc, char const *argv[])
     {
         auto startIn = high_resolution_clock::now();
 
+        auto startP1 = high_resolution_clock::now();
+
         while (getline(inputFile, number))
         {
             nuevoNo = stoi(number);
@@ -495,14 +502,27 @@ int main(int argc, char const *argv[])
             cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
             inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
         }
+        auto stopP1 = high_resolution_clock::now();
+        auto durP1 = duration_cast<microseconds>(stopP1 - startP1);
+
+        cout << "Le demoró: " << durP1.count() << " microsegundos en insertar " << noOperaciones << "valores\n"
+             << endl;
+
         //cout << "Sale del ciclo" << endl;
     }
+
+    cout << "\nUna vez que el árbol esta insertado:";
+    grados.atraviesa();
+    cout << "\n\n";
 
     inDoc.close();
     inputFile.close();
 
     cout << "\n\nInicio de búsqueda\n"
          << endl;
+
+    searchDoc << "\n\nInicio de búsqueda\n"
+              << endl;
 
     int lost;
 
@@ -521,19 +541,24 @@ int main(int argc, char const *argv[])
 
     auto startBus = high_resolution_clock::now();
 
+    auto startP2 = high_resolution_clock::now();
+
     for (int cont = 0; cont < noOperaciones; cont++)
     {
         lost = rand() % noOperaciones + 1;
 
-        //cout << lost << endl;
-
         if (grados.busqueda(lost) != NULL)
         {
+
             auto stopBus = high_resolution_clock::now();
             auto durBus = duration_cast<microseconds>(stopBus - startBus);
             cout << "    " << lost << "\t\t | \t\t"
                  << "Encontrado"
                  << "\t\t | \t\t" << durBus.count() << endl;
+
+            searchDoc << "    " << lost << "\t\t | \t\t"
+                                     << "Encontrado"
+                                     << "\t\t | \t\t" << durBus.count() << endl;
         }
         else
         {
@@ -542,8 +567,26 @@ int main(int argc, char const *argv[])
             cout << "    " << lost << "\t\t | \t\t"
                  << "No se encontró"
                  << "\t\t | \t\t" << durBus.count() << endl;
+
+            searchDoc << "    " << lost << "\t\t | \t\t"
+                      << "Encontrado"
+                      << "\t\t | \t\t" << durBus.count() << endl;
         }
     }
+    auto stopP2 = high_resolution_clock::now();
+    auto durP2 = duration_cast<microseconds>(stopP2 - startP2);
+    
+    cout << "Le demoró: " << durP2.count() << " microsegundos en buscar " << noOperaciones << " valores\n"
+         << endl;
+
+    searchDoc << "Le demoró: " << durP2.count() << " microsegundos en buscar " << noOperaciones << " valores\n"
+              << endl;
+
+    cout << "\n\nComienza el proceso de eliminación\n"
+         << endl;
+
+    delDoc << "\n\nComienza el proceso de eliminación\n"
+           << endl;
 
     cout << "\n\nNúmero \t\t"
          << " |"
@@ -557,6 +600,8 @@ int main(int argc, char const *argv[])
 
     auto startDel = high_resolution_clock::now();
 
+    auto startP3 = high_resolution_clock::now();
+
     for (int cont = 0; cont < noOperaciones; cont++)
     {
         lost = rand() % noOperaciones + 1;
@@ -569,5 +614,19 @@ int main(int argc, char const *argv[])
         cout << "    " << lost << "\t\t | \t\t" << durDel.count() << endl;
         delDoc << "    " << lost << "\t\t | \t\t" << durDel.count() << endl;
     }
+
+    auto stopP3 = high_resolution_clock::now();
+    auto durP3 = duration_cast<microseconds>(stopP3 - startP3);
+
+    cout << "Le demoró: " << durP3.count() << " microsegundos en borrar " << noOperaciones << " valores\n"
+         << endl;
+
+    delDoc << "Le demoró: " << durP3.count() << " microsegundos en borrar " << noOperaciones << " valores\n"
+         << endl;
+
+    cout << "\nUna vez que se eliminó un valor en el árbol:";
+    grados.atraviesa();
+    cout << "\n\n";
+
     return 0;
 }
