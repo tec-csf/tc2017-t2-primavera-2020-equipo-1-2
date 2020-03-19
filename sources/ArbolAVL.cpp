@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <ctime>
 #include <chrono>
-#include <bits/stdc++.h>
+#include <fstream>
 #include <queue>
 
 using namespace std::chrono;
@@ -272,33 +272,33 @@ void AVLtree<T>::printBalance()
     cout << endl;
 }
 
-void Ascendente(int arr[], int tamArreglo)
-{
+// void Ascendente(int arr[], int tamArreglo)
+// {
 
-    sort(arr, arr + tamArreglo);
+//     sort(arr, arr + tamArreglo);
 
-    cout << "El arreglo en orden ascendente es " << endl;
+//     cout << "El arreglo en orden ascendente es " << endl;
 
-    for (int i = 0; i < tamArreglo; ++i) {
-        cout << arr[i] << " ";
-    }
+//     for (int i = 0; i < tamArreglo; ++i) {
+//         cout << arr[i] << " ";
+//     }
 
-    cout << "\n";
-};
+//     cout << "\n";
+// };
 
-void Descendente(int arr[], int tamArreglo)
-{
+// void Descendente(int arr[], int tamArreglo)
+// {
 
-    sort(arr, arr + tamArreglo, greater<>());
+//     sort(arr, arr + tamArreglo, greater<int>());
 
-    cout << "El arreglo en orden ascendente es " << endl;
+//     cout << "El arreglo en orden ascendente es " << endl;
 
-    for (int i = 0; i < tamArreglo; ++i) {
-        cout << arr[i] << " ";
-    }
+//     for (int i = 0; i < tamArreglo; ++i) {
+//         cout << arr[i] << " ";
+//     }
 
-    cout << "\n";
-};
+//     cout << "\n";
+// };
 
 void Buscar(int arr[], int tamArreglo, int valPerd)
 {
@@ -342,8 +342,10 @@ int main(int argc, char const *argv[])
 
 	ofstream inDoc("../examples//OutputInsertion.txt");
 
-	cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
-	cin >> noOperaciones;
+	// cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
+	// cin >> noOperaciones;
+
+	noOperaciones = 0;
 
 	srand((unsigned)time(0));
 
@@ -383,64 +385,6 @@ int main(int argc, char const *argv[])
 	}
 	inDoc.close();
 	inputFile.close();
-
-
-    
-
-  //   int tamArreglo, delVal, cant, newVal, tamRand, opcion, buscado, tamArregloB;
-
-  //   tamRand = 100000;
-  //   tamArreglo = 50000;
-
-  //   tamArregloB = 10;
-
-		// tamArreglo = tamArreglo * 2;
-
-  //   int arr[tamArreglo];
-
-		// int arrBuscable[10] = { 51215, 17258, 21173, 79491, 71900, 20035, 81300, 98, 19, 6110 };
-
-		// srand((unsigned)time(0));
-
-  //   auto start = high_resolution_clock::now();
-
-  //   for (int cont = 0; cont < tamArreglo; cont++) {
-
-  //       arr[cont] = (rand() % tamRand) + 1;
-  //   }
-
-  //   int n = sizeof(arr) / sizeof(arr[0]);
-
-  //   for (size_t i = 0; i < tamArreglo; i++) {
-  //       t.insert(arr[i++]);
-  //   }
-
-		// cout << "\n" << '\n';
-
-		// for (int i = 0; i < tamArregloB; i++) {
-
-  //       int valPerd = arrBuscable[i];
-
-  //       cout << valPerd << endl;
-
-  //       Buscar(arr, tamArreglo, valPerd);
-  //   }
-
-  //   cout << "\n";
-
-  //   auto stop = high_resolution_clock::now();
-
-  //   auto durationSeg = duration_cast<seconds>(stop - start);
-  //   auto durationMilli = duration_cast<milliseconds>(stop - start);
-  //   auto durationMicro = duration_cast<microseconds>(stop - start);
-
-  //   cout << "\n";
-
-  //   cout << "Le tomo " << durationSeg.count() << " segundos\n";
-  //   cout << "Le tomo " << durationMilli.count() << " milisegundos\n";
-  //   cout << "Le tomo " << durationMicro.count() << " microsegundos\n";
-
-  //   cout << "\n";
 
     return 0;
 }
