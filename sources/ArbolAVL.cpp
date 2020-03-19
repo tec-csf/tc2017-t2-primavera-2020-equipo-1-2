@@ -60,7 +60,10 @@ private:
 
 };
 
-/* AVL class definition */
+/* rebalance: this method rebalances the tree
+* @param pointer node
+* @return void
+*/
 template <class T>
 void AVLtree<T>::rebalance(AVLnode<T>* n)
 {
@@ -113,7 +116,10 @@ AVLnode<T>* AVLtree<T>::rotateLeft(AVLnode<T>* a)
     setBalance(b);
     return b;
 }
-
+/* rotateRight: this method makes a simple rotation to the right
+* @param pointer node
+* @return b the new balanced node
+*/
 template <class T>
 AVLnode<T>* AVLtree<T>::rotateRight(AVLnode<T>* a)
 {
@@ -140,7 +146,10 @@ AVLnode<T>* AVLtree<T>::rotateRight(AVLnode<T>* a)
     setBalance(b);
     return b;
 }
-
+/* rotateLeftThenRight: this method makes a doble rotation to the right
+* @param pointer node
+* @return rotateRight(n) the new balanced node
+*/
 template <class T>
 AVLnode<T>* AVLtree<T>::rotateLeftThenRight(AVLnode<T>* n)
 {
@@ -162,7 +171,10 @@ int AVLtree<T>::height(AVLnode<T>* n)
         return -1;
     return 1 + max(height(n->left), height(n->right));
 }
-
+/* setBalance: this method gets the balance of the tree
+* @param pointer node
+* @return void
+*/
 template <class T>
 void AVLtree<T>::setBalance(AVLnode<T>* n)
 {
@@ -210,10 +222,10 @@ bool AVLtree<T>::insert(T key)
             if (n->key == key)
                 return false;
 
-            parent = n;
+            parent = n; //if key and the value in root are the same, it makes root the parent
 
             bool goLeft = n->key > key;
-            n = goLeft ? n->left : n->right;
+            n = goLeft ? n->left : n->right; //orders the values to be inserted
 
             if (n == NULL) {
                 if (goLeft) {
