@@ -89,7 +89,10 @@ void AVLtree<T>::rebalance(AVLnode<T>* n)
         root = n;
     }
 }
-
+/* rotateLeft: this method makes a simple rotation to the left
+* @param pointer node
+* @return b the new balanced node
+*/
 template <class T>
 AVLnode<T>* AVLtree<T>::rotateLeft(AVLnode<T>* a)
 {
@@ -156,14 +159,20 @@ AVLnode<T>* AVLtree<T>::rotateLeftThenRight(AVLnode<T>* n)
     n->left = rotateLeft(n->left);
     return rotateRight(n);
 }
-
+/* rotateRightThenLeft: this method makes a doble rotation to the left
+* @param pointer node
+* @return rotateLeft(n) the new balanced node
+*/
 template <class T>
 AVLnode<T>* AVLtree<T>::rotateRightThenLeft(AVLnode<T>* n)
 {
     n->right = rotateRight(n->right);
     return rotateLeft(n);
 }
-
+/* height: this method gets the height in each node
+* @param pointer node
+* @return int value of height
+*/
 template <class T>
 int AVLtree<T>::height(AVLnode<T>* n)
 {
@@ -180,7 +189,10 @@ void AVLtree<T>::setBalance(AVLnode<T>* n)
 {
     n->balance = height(n->right) - height(n->left);
 }
-
+/* printBalance: this method prints the balance of the tree
+* @param pointer node
+* @return void
+*/
 template <class T>
 void AVLtree<T>::printBalance(AVLnode<T>* n)
 {
@@ -205,7 +217,7 @@ AVLtree<T>::~AVLtree(void)
 }
 /* insert: this method insert a new node with it's value
 * @param key contains the value of the node
-* @return true
+* @return true successful insertion
 */
 template <class T>
 bool AVLtree<T>::insert(T key)
@@ -243,7 +255,11 @@ bool AVLtree<T>::insert(T key)
 
     return true;
 }
-
+/* deleteKey: this method deletes the value and the node
+* Note: if the node to be deleted has children, it rearranges 
+* @param value
+* @return false
+*/
 template <class T>
 bool AVLtree<T>::deleteKey(const T delKey)
 {
@@ -288,14 +304,19 @@ bool AVLtree<T>::deleteKey(const T delKey)
     }
     return false;
 }
-
+/* printBalance: this method prints the Balance of the tree
+* @return void
+*/
 template <class T>
 void AVLtree<T>::printBalance()
 {
     printBalance(root);
     cout << endl;
 }
-
+/* search: this method searches for a value in the AVL tree
+* @param value to be searched
+* @return true if found
+*/
 template <class T>
 bool AVLtree<T>::search(const T target)
 {
@@ -367,36 +388,6 @@ bool AVLtree<T>::search(const T target)
 
 //     cout << "\n";
 // };
-
-void Buscar(int arr[], int tamArreglo, int valPerd)
-{
-
-    sort(arr, arr + tamArreglo);
-
-    bool res = false;
-    int i = 0;
-
-    while (i < tamArreglo && res != true) {
-        if (arr[i] == valPerd) {
-
-            res = true;
-        }
-        else {
-
-            i++;
-        }
-    }
-
-    if (arr[i] == valPerd) {
-        cout << "El valor " << valPerd << " si se encuentra en el árbol" << '\n';
-    }
-    else {
-
-        cout << "El valor " << valPerd << " no se encuentra en el árbol" << '\n';
-    }
-
-    cout << "\n" << '\n';
-};
 
 int main(int argc, char const *argv[])
 {	
