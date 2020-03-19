@@ -9,12 +9,14 @@
 using namespace std::chrono;
 using namespace std;
 
+/* AVLnode: this class defines the nodes
+*/
 template <class T>
 class AVLnode {
 public:
     T key;
     int balance;
-    AVLnode *left, *right, *parent;
+    AVLnode *left, *right, *parent; //pointer to the parts of the AVL tree
 
     AVLnode(T k, AVLnode* p)
         : key(k)
@@ -32,11 +34,11 @@ public:
     }
 };
 
-/* AVL tree */
+/* AVL tree: this class defines the AVL tree */
 template <class T>
 class AVLtree {
 public:
-    AVLtree(void);
+    AVLtree(void); //porque empieza en void?
     ~AVLtree(void);
     bool insert(T key);
     bool deleteKey(const T key);
@@ -176,7 +178,8 @@ void AVLtree<T>::printBalance(AVLnode<T>* n)
         printBalance(n->right);
     }
 }
-
+/* AVLtree: this class initializes the tree creating the first node in NULL
+*/
 template <class T>
 AVLtree<T>::AVLtree(void)
     : root(NULL)
@@ -188,12 +191,15 @@ AVLtree<T>::~AVLtree(void)
 {
     delete root;
 }
-
+/* insert: this method insert a new node with it's value
+* @param key contains the value of the node
+* @return true
+*/
 template <class T>
 bool AVLtree<T>::insert(T key)
 {
     if (root == NULL) {
-        root = new AVLnode<T>(key, NULL);
+        root = new AVLnode<T>(key, NULL); //if there's no root it will create a new node which will be the node of the new tree
     }
     else {
         AVLnode<T>

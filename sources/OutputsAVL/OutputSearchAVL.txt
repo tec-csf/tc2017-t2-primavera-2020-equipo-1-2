@@ -1,13 +1,13 @@
 
 
 Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
-    92		 | 		Encontrado		 | 		0
-    36		 | 		Encontrado		 | 		4
-    38		 | 		Encontrado		 | 		7
-    2		 | 		No se encontró		 | 		11
-    81		 | 		Encontrado		 | 		14
-    57		 | 		Encontrado		 | 		18
-    87		 | 		No se encontró		 | 		21
-    89		 | 		Encontrado		 | 		25
-    87		 | 		No se encontró		 | 		28
-    58		 | 		Encontrado		 | 		32
+    93		 | 		No se encontró		 | 		0
+    37		 | 		No se encontró		 | 		39
+    88		 | 		No se encontró		 | 		56
+    32		 | 		No se encontró		 | 		71
+    99		 | 		No se encontró		 | 		86
+    55		 | 		No se encontró		 | 		100
+    57		 | 		No se encontró		 | 		116
+    44		 | 		No se encontró		 | 		131
+    25		 | 		No se encontró		 | 		148
+    27		 | 		No se encontró		 | 		163
