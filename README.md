@@ -66,4 +66,4 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 > https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
 > https://www.geeksforgeeks.org/avl-tree-set-2-deletion/
 > https://rosettacode.org/wiki/AVL_tree#C.2B.2B
->
+> https://www.geeksforgeeks.org/introduction-of-b-tree-2/
