@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
+    81		 | 		Encontrado		 | 		0
+    34		 | 		Encontrado		 | 		3
+    35		 | 		Encontrado		 | 		13
+    8		 | 		Encontrado		 | 		18
+    82		 | 		Encontrado		 | 		22
+    35		 | 		Encontrado		 | 		26
+    65		 | 		Encontrado		 | 		32
+    2		 | 		No se encontró		 | 		35
+    25		 | 		Encontrado		 | 		41
+    93		 | 		Encontrado		 | 		45
