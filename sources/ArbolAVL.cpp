@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <ctime>
 #include <chrono>
-#include <bits/stdc++.h>
+#include <fstream>
 #include <queue>
 
 using namespace std::chrono;
