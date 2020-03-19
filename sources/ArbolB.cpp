@@ -495,8 +495,9 @@ int main(int argc, char const *argv[])
             cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
             inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
         }
-        cout << "Sale del ciclo" << endl;
+        //cout << "Sale del ciclo" << endl;
     }
+
     inDoc.close();
     inputFile.close();
 
@@ -568,6 +569,5 @@ int main(int argc, char const *argv[])
         cout << "    " << lost << "\t\t | \t\t" << durDel.count() << endl;
         delDoc << "    " << lost << "\t\t | \t\t" << durDel.count() << endl;
     }
-
     return 0;
 }
