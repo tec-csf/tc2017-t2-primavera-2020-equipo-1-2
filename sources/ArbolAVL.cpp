@@ -330,64 +330,117 @@ void Buscar(int arr[], int tamArreglo, int valPerd)
     cout << "\n" << '\n';
 };
 
-int main()
-{
-    AVLtree<int> t;
+int main(int argc, char const *argv[])
+{	
+	AVLtree<int> tree;
 
-    int tamArreglo, delVal, cant, newVal, tamRand, opcion, buscado, tamArregloB;
+	string inputDoc, nombreArchivo, number;
+	fstream inputFile;
+	int nuevoNo, noOperaciones, perdu;
 
-    tamRand = 100000;
-    tamArreglo = 50000;
+	int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
 
-    tamArregloB = 10;
+	ofstream inDoc("../examples//OutputInsertion.txt");
 
-		tamArreglo = tamArreglo * 2;
+	cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
+	cin >> noOperaciones;
 
-    int arr[tamArreglo];
+	srand((unsigned)time(0));
 
-		int arrBuscable[10] = { 51215, 17258, 21173, 79491, 71900, 20035, 81300, 98, 19, 6110 };
+	cout << "El tiempo será tomado en microsegundos.\n"
+	     << endl;
 
-		srand((unsigned)time(0));
+	nombreArchivo = argv[2];
 
-    auto start = high_resolution_clock::now();
+	inputFile.open(nombreArchivo.c_str());
 
-    for (int cont = 0; cont < tamArreglo; cont++) {
+	cout << "Número \t\t"
+	     << " |"
+	     << "\t\tTiempo que le tomó" << endl;
+	cout << "--------------------------------------------------------" << endl;
 
-        arr[cont] = (rand() % tamRand) + 1;
-    }
+	inDoc << "Número \t\t"
+	      << " |"
+	      << "\t\tTiempo que le tomó" << endl;
+	inDoc << "--------------------------------------------------------" << endl;
 
-    int n = sizeof(arr) / sizeof(arr[0]);
+	if (inputFile.is_open())
+	{
+	    auto startIn = high_resolution_clock::now();
 
-    for (size_t i = 0; i < tamArreglo; i++) {
-        t.insert(arr[i++]);
-    }
+	    while (getline(inputFile, number))
+	    {
+	        nuevoNo = stoi(number);
 
-		cout << "\n" << '\n';
+	        tree.insert(nuevoNo);
 
-		for (int i = 0; i < tamArregloB; i++) {
+	        auto stopIn = high_resolution_clock::now();
+	        auto durIn = duration_cast<microseconds>(stopIn - startIn);
 
-        int valPerd = arrBuscable[i];
+	        cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+	        inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+	    }
+	}
+	inDoc.close();
+	inputFile.close();
 
-        cout << valPerd << endl;
 
-        Buscar(arr, tamArreglo, valPerd);
-    }
+    
 
-    cout << "\n";
+  //   int tamArreglo, delVal, cant, newVal, tamRand, opcion, buscado, tamArregloB;
 
-    auto stop = high_resolution_clock::now();
+  //   tamRand = 100000;
+  //   tamArreglo = 50000;
 
-    auto durationSeg = duration_cast<seconds>(stop - start);
-    auto durationMilli = duration_cast<milliseconds>(stop - start);
-    auto durationMicro = duration_cast<microseconds>(stop - start);
+  //   tamArregloB = 10;
 
-    cout << "\n";
+		// tamArreglo = tamArreglo * 2;
 
-    cout << "Le tomo " << durationSeg.count() << " segundos\n";
-    cout << "Le tomo " << durationMilli.count() << " milisegundos\n";
-    cout << "Le tomo " << durationMicro.count() << " microsegundos\n";
+  //   int arr[tamArreglo];
 
-    cout << "\n";
+		// int arrBuscable[10] = { 51215, 17258, 21173, 79491, 71900, 20035, 81300, 98, 19, 6110 };
+
+		// srand((unsigned)time(0));
+
+  //   auto start = high_resolution_clock::now();
+
+  //   for (int cont = 0; cont < tamArreglo; cont++) {
+
+  //       arr[cont] = (rand() % tamRand) + 1;
+  //   }
+
+  //   int n = sizeof(arr) / sizeof(arr[0]);
+
+  //   for (size_t i = 0; i < tamArreglo; i++) {
+  //       t.insert(arr[i++]);
+  //   }
+
+		// cout << "\n" << '\n';
+
+		// for (int i = 0; i < tamArregloB; i++) {
+
+  //       int valPerd = arrBuscable[i];
+
+  //       cout << valPerd << endl;
+
+  //       Buscar(arr, tamArreglo, valPerd);
+  //   }
+
+  //   cout << "\n";
+
+  //   auto stop = high_resolution_clock::now();
+
+  //   auto durationSeg = duration_cast<seconds>(stop - start);
+  //   auto durationMilli = duration_cast<milliseconds>(stop - start);
+  //   auto durationMicro = duration_cast<microseconds>(stop - start);
+
+  //   cout << "\n";
+
+  //   cout << "Le tomo " << durationSeg.count() << " segundos\n";
+  //   cout << "Le tomo " << durationMilli.count() << " milisegundos\n";
+  //   cout << "Le tomo " << durationMicro.count() << " microsegundos\n";
+
+  //   cout << "\n";
 
     return 0;
 }
