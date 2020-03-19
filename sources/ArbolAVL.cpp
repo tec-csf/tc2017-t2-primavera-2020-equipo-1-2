@@ -39,8 +39,9 @@ public:
     AVLtree(void);
     ~AVLtree(void);
     bool insert(T key);
-    void deleteKey(const T key);
+    bool deleteKey(const T key);
     void printBalance();
+    bool search(const T target);
 
 private:
     AVLnode<T>* root;
@@ -54,6 +55,7 @@ private:
     void setBalance(AVLnode<T>* n);
     void printBalance(AVLnode<T>* n);
     void clearNode(AVLnode<T>* n);
+
 };
 
 /* AVL class definition */
@@ -225,10 +227,10 @@ bool AVLtree<T>::insert(T key)
 }
 
 template <class T>
-void AVLtree<T>::deleteKey(const T delKey)
+bool AVLtree<T>::deleteKey(const T delKey)
 {
     if (root == NULL)
-        return;
+        return false;
 
     AVLnode<T>
         *n = root,
@@ -251,6 +253,7 @@ void AVLtree<T>::deleteKey(const T delKey)
 
         if (root->key == delKey) {
             root = child;
+            return true;
         }
         else {
             if (parent->left == n) {
@@ -258,11 +261,14 @@ void AVLtree<T>::deleteKey(const T delKey)
             }
             else {
                 parent->right = child;
+
             }
 
+            return true;
             rebalance(parent);
         }
     }
+    return false;
 }
 
 template <class T>
@@ -270,6 +276,50 @@ void AVLtree<T>::printBalance()
 {
     printBalance(root);
     cout << endl;
+}
+
+template <class T>
+bool AVLtree<T>::search(const T target)
+{
+	if (root == NULL)
+    {
+    	return false;
+    }
+
+    AVLnode<T>
+    	*node = root;
+
+    while(true)
+    {
+        if(target == node->key)
+        {
+            return true;
+        }
+        else if(target < node->key)
+        {
+            if(node->left != NULL)
+            {
+                node = node->left;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if(node->right != NULL)
+            {
+                node = node->right;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+
 }
 
 // void Ascendente(int arr[], int tamArreglo)
@@ -334,9 +384,12 @@ int main(int argc, char const *argv[])
 {	
 	AVLtree<int> tree;
 
+	srand((unsigned)time(0)); 
+
 	string inputDoc, nombreArchivo, number;
 	fstream inputFile;
 	int nuevoNo, noOperaciones, perdu;
+	int arr[10];
 
 	int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
 
@@ -382,9 +435,58 @@ int main(int argc, char const *argv[])
 	        cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
 	        inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
 	    }
+
+	    auto stopIn = high_resolution_clock::now();
+	    auto durIn = duration_cast<microseconds>(stopIn - startIn);
+	    cout << "Tiempo total de creación de Árbol AVL: " << durIn.count() << endl << endl;
 	}
 	inDoc.close();
 	inputFile.close();
+
+	for (int i = 0; i < 10; ++i)
+	{
+		arr[i] = (rand()%100)+1; 
+
+		cout << "Elemento " << i+1 << " a buscar: " << arr[i] << endl;
+	}
+
+    cout <<endl;
+
+	auto startIn2 = high_resolution_clock::now();
+
+	for (int i = 0; i < 10; ++i)
+	{
+		if(tree.search(arr[i]))
+        {
+            cout << "Value " << arr[i] << " was found in tree" << endl;
+        }
+        else
+        {
+            cout << "Value " << arr[i] << " was NOT found in tree" << endl;
+        }
+	}
+
+	auto stopIn2 = high_resolution_clock::now();
+	auto durIn2 = duration_cast<microseconds>(stopIn2 - startIn2);
+	cout << "Tiempo total de búsqueda de 10 valores aleatorios: " << durIn2.count() << endl << endl;;
+
+    auto startIn3 = high_resolution_clock::now();
+
+    for (int i = 0; i < 10; ++i)
+    {
+        if(tree.deleteKey(arr[i]))
+        {
+            cout << "Value " << arr[i] << " was erased succesfully" << endl;
+        }
+        else
+        {
+            cout << "Value " << arr[i] << " was NOT erased. Value not in tree" << endl;
+        }
+    }
+
+    auto stopIn3 = high_resolution_clock::now();
+    auto durIn3 = duration_cast<microseconds>(stopIn3 - startIn3);
+    cout << "Tiempo total de eliminación de 10 valores aleatorios: " << durIn3.count() << endl << endl;
 
     return 0;
 }
