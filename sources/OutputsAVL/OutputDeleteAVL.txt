@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se eliminó?		 |		Tiempo que le tomó
+    92		 | 		Eliminado		 | 		0
+    36		 | 		Eliminado		 | 		4
+    38		 | 		Eliminado		 | 		7
+    2		 | 		No se encontró		 | 		11
+    81		 | 		Eliminado		 | 		14
+    57		 | 		Eliminado		 | 		18
+    87		 | 		No se encontró		 | 		21
+    89		 | 		Eliminado		 | 		26
+    87		 | 		No se encontró		 | 		30
+    58		 | 		Eliminado		 | 		33

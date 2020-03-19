@@ -393,7 +393,9 @@ int main(int argc, char const *argv[])
 
 	int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
 
-	ofstream inDoc("../examples//OutputInsertion.txt");
+	ofstream inDoc("OutputsAVL/OutputInsertionAVL.txt");
+    ofstream searchDoc("OutputsAVL/OutputSearchAVL.txt");
+    ofstream delDoc("OutputsAVL/OutputDeleteAVL.txt");
 
 	// cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
 	// cin >> noOperaciones;
@@ -443,50 +445,102 @@ int main(int argc, char const *argv[])
 	inDoc.close();
 	inputFile.close();
 
+    cout << "\n\nInicio de búsqueda\n";
+    cout << "\n\nNúmero \t\t"
+         << " |"
+         << "\t\t¿Se encontró?\t\t"
+         << " |"
+         << "\t\tTiempo que le tomó" << endl;
+    cout << "------------------------------------------------------------------------------------------------------" << endl;
+
+    searchDoc << "\n\nNúmero \t\t"
+              << " |"
+              << "\t\t¿Se encontró?\t\t"
+              << " |"
+              << "\t\tTiempo que le tomó" << endl;
+
 	for (int i = 0; i < 10; ++i)
 	{
 		arr[i] = (rand()%100)+1; 
-
-		cout << "Elemento " << i+1 << " a buscar: " << arr[i] << endl;
 	}
 
-    cout <<endl;
-
-	auto startIn2 = high_resolution_clock::now();
+	auto startBus = high_resolution_clock::now();
 
 	for (int i = 0; i < 10; ++i)
 	{
 		if(tree.search(arr[i]))
         {
-            cout << "Value " << arr[i] << " was found in tree" << endl;
+            auto stopBus = high_resolution_clock::now();
+            auto durBus = duration_cast<microseconds>(stopBus - startBus);
+            cout << "    " << arr[i] << "\t\t | \t\t"
+                 << "Encontrado"
+                 << "\t\t | \t\t" << durBus.count() << endl;
+            searchDoc << "    " << arr[i] << "\t\t | \t\t"
+                      << "Encontrado"
+                      << "\t\t | \t\t" << durBus.count() << endl;
         }
         else
         {
-            cout << "Value " << arr[i] << " was NOT found in tree" << endl;
+            auto stopBus = high_resolution_clock::now();
+            auto durBus = duration_cast<microseconds>(stopBus - startBus);
+            cout << "    " << arr[i] << "\t\t | \t\t"
+                 << "No se encontró"
+                 << "\t\t | \t\t" << durBus.count() << endl;
+            searchDoc << "    " << arr[i] << "\t\t | \t\t"
+                      << "No se encontró"
+                      << "\t\t | \t\t" << durBus.count() << endl;
         }
 	}
 
-	auto stopIn2 = high_resolution_clock::now();
-	auto durIn2 = duration_cast<microseconds>(stopIn2 - startIn2);
-	cout << "Tiempo total de búsqueda de 10 valores aleatorios: " << durIn2.count() << endl << endl;;
+	auto stopBus = high_resolution_clock::now();
+	auto durBus = duration_cast<microseconds>(stopBus - startBus);
+	cout << endl << "Tiempo total de búsqueda de 10 valores aleatorios: " << durBus.count() << endl << endl;;
 
-    auto startIn3 = high_resolution_clock::now();
+    cout << "\n\nInicio de eliminación\n";
+    cout << "\n\nNúmero \t\t"
+         << " |"
+         << "\t\t¿Se eliminó?\t\t"
+         << " |"
+         << "\t\tTiempo que le tomó" << endl;
+    cout << "------------------------------------------------------------------------------------------------------" << endl;
+
+    delDoc << "\n\nNúmero \t\t"
+         << " |"
+         << "\t\t¿Se eliminó?\t\t"
+         << " |"
+         << "\t\tTiempo que le tomó" << endl;
+
+    auto startDel = high_resolution_clock::now();
 
     for (int i = 0; i < 10; ++i)
     {
         if(tree.deleteKey(arr[i]))
         {
-            cout << "Value " << arr[i] << " was erased succesfully" << endl;
+            auto stopDel = high_resolution_clock::now();
+            auto durDel = duration_cast<microseconds>(stopDel - startDel);
+            cout << "    " << arr[i] << "\t\t | \t\t"
+                 << "Eliminado"
+                 << "\t\t | \t\t" << durDel.count() << endl;
+            delDoc << "    " << arr[i] << "\t\t | \t\t"
+                   << "Eliminado"
+                   << "\t\t | \t\t" << durDel.count() << endl;
         }
         else
         {
-            cout << "Value " << arr[i] << " was NOT erased. Value not in tree" << endl;
+            auto stopDel = high_resolution_clock::now();
+            auto durDel = duration_cast<microseconds>(stopDel - startDel);
+            cout << "    " << arr[i] << "\t\t | \t\t"
+                 << "No se encontró"
+                 << "\t\t | \t\t" << durDel.count() << endl;
+            delDoc << "    " << arr[i] << "\t\t | \t\t"
+                   << "No se encontró"
+                   << "\t\t | \t\t" << durDel.count() << endl;
         }
     }
 
-    auto stopIn3 = high_resolution_clock::now();
-    auto durIn3 = duration_cast<microseconds>(stopIn3 - startIn3);
-    cout << "Tiempo total de eliminación de 10 valores aleatorios: " << durIn3.count() << endl << endl;
+    auto stopDel = high_resolution_clock::now();
+    auto durDel = duration_cast<microseconds>(stopDel - startDel);
+    cout << "Tiempo total de eliminación de 10 valores aleatorios: " << durDel.count() << endl << endl;
 
     return 0;
 }
