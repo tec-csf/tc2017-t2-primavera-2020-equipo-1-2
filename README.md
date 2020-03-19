@@ -47,5 +47,7 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 *[Incluya aquí una guía paso a paso para poder utilizar la aplicación, desde la clonación del repositorio, la compilación del código hasta la ejecución de los ejemplos para visualizar los resultados.]*
 
 ## 3. Referencias
-
-*[Incluya aquí las referencias a sitios de interés y cualquier otra información que haya utilizado para realizar la actividad y que le puedan ser de utilidad a otras personas que quieran usarlo como referencia]*
+> https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
+> https://www.geeksforgeeks.org/avl-tree-set-2-deletion/
+> https://rosettacode.org/wiki/AVL_tree#C.2B.2B
+>
