@@ -56,6 +56,7 @@ public:
     friend class arbolB;
 };
 
+ //This class defines the B Tree
 template <class T>
 class arbolB
 {
@@ -84,6 +85,11 @@ public:
     void eliminar(int k);
 };
 
+/* Ramas is the constructor of Ramas
+* @param cint val1 hecks if the value is real or not
+* @param bool the value changes if it is true
+* @return nothing
+*/
 Ramas::Ramas(int val1, bool ramita)
 {
     grados = val1;
@@ -95,6 +101,10 @@ Ramas::Ramas(int val1, bool ramita)
     x = 0;
 }
 
+/* encontrarLlave it fin
+* @param 
+* @return 
+*/
 int Ramas::encontrarLlave(int k)
 {
     int idx = 0;
@@ -296,6 +306,10 @@ void Ramas::mezclar(int idx)
     return;
 }
 
+/* Insert: it inserts the input values to a B tree
+* @param int k is the numeric value to be inserted in the tree
+* @return void 
+*/
 template <>
 void arbolB<int>::insert(int k)
 {
@@ -328,6 +342,10 @@ void arbolB<int>::insert(int k)
     }
 }
 
+/* insertarVacio: inserts values in case the tree in empty
+* @param int k is the numeric value to be inserted in the tree
+* @return void 
+*/
 void Ramas::insertarVacio(int k)
 {
     int i = x - 1;
@@ -359,6 +377,11 @@ void Ramas::insertarVacio(int k)
     }
 }
 
+/* seperaBLoque: if it has to enter a number to the tree it splits the block and inserts it in the empty spot
+* @param int i the numeric value to be inserted 
+* @param Ramas *y the pointer indicating the memory where it is located 
+* @return void 
+*/
 void Ramas::separaBloque(int i, Ramas *y)
 {
     Ramas *z = new Ramas(y->grados, y->waraq);
@@ -387,7 +410,10 @@ void Ramas::separaBloque(int i, Ramas *y)
 
     x = x + 1;
 }
-
+/* atraviesa:it prints the numebrs lcoated in the tree
+* @param none
+* @return void 
+*/
 void Ramas::atraviesa()
 {
     int i;
@@ -401,7 +427,10 @@ void Ramas::atraviesa()
     if (waraq == false)
         apun[i]->atraviesa();
 }
-
+/* busqueda: it searches for the value inserted 
+* @param int k value to be search 
+* @return none
+*/
 Ramas *Ramas::busqueda(int k)
 {
     int i = 0;
@@ -417,6 +446,10 @@ Ramas *Ramas::busqueda(int k)
     return apun[i]->busqueda(k);
 }
 
+/* eliminar: it deletes the inserted value 
+* @param int k value to be deleted
+* @return void
+*/
 template <>
 void arbolB<int>::eliminar(int k)
 {
