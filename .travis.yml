@@ -4,6 +4,5 @@ script:
     - cd sources
     - g++ -o AB ArbolB.cpp -std=c++17
     - ./AB -i ../examples/diez.txt
-    - 10
     - g++ -o AVL ArbolAVL.cpp -std=c++17
     - ./AVL
