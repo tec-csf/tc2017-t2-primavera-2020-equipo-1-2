@@ -43,6 +43,21 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 *[Incluya aquí una explicación de la solución implementada]*
 
 ### 2.1 Pasos a seguir para utilizar la aplicación
+* Contar con acceso a internet
+* Contar con una terminal
+	* La terminal debe tener gcc instalado
+	* La terminal debe tener git instalado
+	* La terminal debe poder clonar un repositorio de git (cuenta con acceso a la red)
+
+#### Para clonar el repositorio
+1. Crear una carpeta en la que se vaya a clonar el repositorio
+2. Mediante la terminal, navegar a dicha carpeta
+3. Correr el comando `git clone https://github.com/tec-csf/tc2017-t2-primavera-2020-equipo-1-2`
+
+#### Para correr el programa
+1. Mediante la terminal, navegar a la carpeta sources
+2. Correr el comando: `g++ -o `
+3. Correr el comando: ``
 
 *[Incluya aquí una guía paso a paso para poder utilizar la aplicación, desde la clonación del repositorio, la compilación del código hasta la ejecución de los ejemplos para visualizar los resultados.]*
 
