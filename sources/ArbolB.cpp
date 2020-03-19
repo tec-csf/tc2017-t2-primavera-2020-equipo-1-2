@@ -489,6 +489,7 @@ void arbolB<int>::eliminar(int lost)
     }
     return;
 }
+
 int main(int argc, char const *argv[])
 {
 
@@ -549,7 +550,7 @@ int main(int argc, char const *argv[])
 
     int lost;
 
-    cout << "Número \t\t"
+    cout << "\n\nNúmero \t\t"
          << " |"
          << "\t\t¿Se encontró?\t\t"
          << " |"
@@ -580,6 +581,25 @@ int main(int argc, char const *argv[])
                  << "No se encontró"
                  << "\t\t | \t\t" << durBus.count() << endl;
         }
+    }
+
+    cout << "\n\nNúmero \t\t"
+         << " |"
+         << "\t\tTiempo que le tomó" << endl;
+    cout << "--------------------------------------------------------" << endl;
+
+    auto startDel = high_resolution_clock::now();
+
+    for (int cont = 0; cont < noOperaciones; cont++)
+    {
+        lost = rand() %noOperaciones+1;
+
+        grados.eliminar(lost);
+
+        auto stopDel = high_resolution_clock::now();
+        auto durDel = duration_cast<microseconds>(stopDel - startDel);
+
+        cout << "    " << lost << "\t\t | \t\t" << durDel.count() << endl;
     }
 
     return 0;

@@ -4,7 +4,8 @@
         "iosfwd": "cpp",
         "fstream": "cpp",
         "locale": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "ostream": "cpp"
     },
     "cSpell.words": [
         "insertar",
