@@ -1,0 +1,17 @@
+Comienza a insertar valores
+Número 		 |		Tiempo que le tomó
+--------------------------------------------------------
+    7		 | 		64
+    4		 | 		109
+    8		 | 		142
+    9		 | 		176
+    8		 | 		208
+    7		 | 		242
+    5		 | 		278
+    3		 | 		310
+    3		 | 		371
+    7		 | 		417
+Le demoró: 460 microsegundos en insertar 10valores
+
+Le demoró: 504 microsegundos en insertar 10 valores
+

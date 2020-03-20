@@ -484,7 +484,7 @@ int main(int argc, char const *argv[])
     string inputDoc, nombreArchivo, number;
     fstream inputFile;
 
-    int nuevoNo, noOperaciones = 10, perdu;
+    int nuevoNo, noOperaciones = 10, perdu, operacionesPre = 10;
     int cantValores; // Cantidad de valores aleatorios que se insertarán en el Árbol
 
     ofstream inDoc("OutputInsertionDiez.txt");
@@ -588,9 +588,9 @@ int main(int argc, char const *argv[])
 
     auto startP2 = high_resolution_clock::now();
 
-    for (int cont = 0; cont < noOperaciones; cont++)
+    for (int cont = 0; cont < operacionesPre; cont++)
     {
-        lost = rand() % noOperaciones + 1;
+        lost = rand() % operacionesPre + 1;
 
         if (grados.busqueda(lost) != NULL)
         {
@@ -651,9 +651,9 @@ int main(int argc, char const *argv[])
 
     auto startP3 = high_resolution_clock::now();
 
-    for (int cont = 0; cont < noOperaciones; cont++)
+    for (int cont = 0; cont < operacionesPre; cont++)
     {
-        lost = rand() % noOperaciones + 1;
+        lost = rand() % operacionesPre + 1;
 
         grados.eliminar(lost);
 
