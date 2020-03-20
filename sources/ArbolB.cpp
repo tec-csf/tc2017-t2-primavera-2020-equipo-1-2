@@ -522,9 +522,9 @@ int main(int argc, char const *argv[])
     int nuevoNo, noOperaciones = 10, perdu, operacionesPre = 10;
     int cantValores; // Cantidad de valores aleatorios que se insertarán en el Árbol
 
-    ofstream inDoc("OutputInsertionDiez.txt");
-    ofstream searchDoc("OutputSearchDiez.txt");
-    ofstream delDoc("OutputDeleteDiez.txt");
+    ofstream inDoc("OutputInsertion.txt");
+    ofstream searchDoc("OutputSearch.txt");
+    ofstream delDoc("OutputDelete.txt");
 
     cout << "¿Cuántos valores se van a insertar?" << endl;
     cout << "Se insertó " << noOperaciones << " por default." << endl;

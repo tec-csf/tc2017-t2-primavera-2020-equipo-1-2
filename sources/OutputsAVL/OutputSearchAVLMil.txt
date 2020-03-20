@@ -1,13 +1,13 @@
 
 
 Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
-    13		 | 		Encontrado		 | 		0
-    29		 | 		Encontrado		 | 		57
-    71		 | 		No se encontró		 | 		111
-    50		 | 		No se encontró		 | 		168
-    68		 | 		Encontrado		 | 		224
-    59		 | 		Encontrado		 | 		292
-    14		 | 		Encontrado		 | 		362
-    22		 | 		No se encontró		 | 		420
-    6		 | 		No se encontró		 | 		477
-    52		 | 		Encontrado		 | 		534
+    66		 | 		Encontrado		 | 		0
+    71		 | 		Encontrado		 | 		58
+    32		 | 		No se encontró		 | 		111
+    53		 | 		No se encontró		 | 		168
+    5		 | 		Encontrado		 | 		225
+    77		 | 		Encontrado		 | 		278
+    1		 | 		No se encontró		 | 		330
+    97		 | 		Encontrado		 | 		387
+    89		 | 		Encontrado		 | 		439
+    47		 | 		No se encontró		 | 		491
