@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se eliminó?		 |		Tiempo que le tomó
+    35		 | 		No se encontró		 | 		0
+    25		 | 		No se encontró		 | 		417
+    88		 | 		No se encontró		 | 		863
+    43		 | 		No se encontró		 | 		1319
+    49		 | 		No se encontró		 | 		1762
+    90		 | 		No se encontró		 | 		3383
+    12		 | 		No se encontró		 | 		3847
+    16		 | 		No se encontró		 | 		4317
+    83		 | 		No se encontró		 | 		4770
+    21		 | 		No se encontró		 | 		5232
