@@ -402,9 +402,9 @@ int main(int argc, char const *argv[])
 
 	int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
 
-	ofstream inDoc("OutputsAVL/OutputInsertionAVL.txt");
-    ofstream searchDoc("OutputsAVL/OutputSearchAVL.txt");
-    ofstream delDoc("OutputsAVL/OutputDeleteAVL.txt");
+	ofstream inDoc("OutputsAVL/OutputInsertionAVLMil.txt");
+    ofstream searchDoc("OutputsAVL/OutputSearchAVLMil.txt");
+    ofstream delDoc("OutputsAVL/OutputDeleteAVLMil.txt");
 
 	// cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
 	// cin >> noOperaciones;

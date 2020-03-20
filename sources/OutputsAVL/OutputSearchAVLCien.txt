@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
+    79		 | 		No se encontró		 | 		1
+    28		 | 		Encontrado		 | 		392
+    86		 | 		Encontrado		 | 		941
+    72		 | 		No se encontró		 | 		1465
+    100		 | 		No se encontró		 | 		1927
+    33		 | 		Encontrado		 | 		2398
+    17		 | 		Encontrado		 | 		2840
+    21		 | 		No se encontró		 | 		3391
+    33		 | 		Encontrado		 | 		3862
+    50		 | 		No se encontró		 | 		4311
