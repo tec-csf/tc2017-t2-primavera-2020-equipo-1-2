@@ -40,7 +40,19 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 ## 2. Solución
 
-*[Incluya aquí una explicación de la solución implementada]*
+Cada uno de estos códigos realiza funciones diferentes, uno se encarga de construir un árbol AVL y el otro se encarga de crear un árbol B. 
+La estructura de estos es diferente, pero se le implementó *programación genérica* a ambos para que fueran mas compatibles con los elementos que se fueran a añadir.
+
+Ambos programas se pueden compilar de la misma manera (como se puede leer en la sección de *Pasos a seguir para utilizar la aplicación*), lo único que cambia de estos es la manera en la que se corren.
+
+Debido a que el Árbol B debe leer, _forzosamente_, de memoria, se creó un [código](examples/DocumentGenerator.cpp) en el cuál se pueden generar documentos con los valores que se soliciten, al igual que su nombre y terminación. En el momento en que se corra el código del [ArbolB.cpp](sources/ArbolB.cpp), se inserta el nombre del documento a analizar, de tal manera, los números que se estarán insertando al código, no están siendo generados en el momento por el mismo código.
+
+De tal manera, el Árbol AVL crea y analiza los números de manera aleatoria debido a que tiene que leer los datos de memoria (_RAM_). Al correrlo, no es necesario tener que insertar un documento.
+
+Para esta solución, no se implementó el uso de headers (__.h__).
+
+* **Nota**
+   * El código se encuentra documentado con la finalidad que cualquier persona que lo este leyendo, entienda la manera en la que los métodos están construidos. La documentación de este mismo fue hecho de acuerdo a los parámetros establecidos por el estándar de **C++17**.
 
 ### 2.1 Pasos a seguir para utilizar la aplicación
 *[Incluya aquí una guía paso a paso para poder utilizar la aplicación, desde la clonación del repositorio, la compilación del código hasta la ejecución de los ejemplos para visualizar los resultados.]*
@@ -56,15 +68,22 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 3. Correr el comando `git clone https://github.com/tec-csf/tc2017-t2-primavera-2020-equipo-1-2`
 
 #### Para correr el programa
-1. Mediante la terminal, navegar a la carpeta sources
+##### Árbol AVL
+1. Mediante la terminal, navegar a la carpeta [sources](../sources)
+2. Correr el comando: `g++ -o AVL ArbolAVL.cpp -std=c++17`
+3. Correr el comando: `./AVL`
+##### Árbol B
+1. Mediante la terminal, navegar a la carpeta [sources](../sources)
 2. Correr el comando: `g++ -o AB ArbolB.cpp -std=c++17`
 3. Correr el comando: `./AB -i ../examples/diez.txt`
-4. Correr el comando: `g++ -o AVL ArbolAVL.cpp -std=c++17`
-5. Correr el comando: `./AVL`
 
 ## 3. Referencias
 > https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
+
 > https://www.geeksforgeeks.org/avl-tree-set-2-deletion/
-> https://rosettacode.org/wiki/AVL_tree#C.2B.2B
-> https://www.geeksforgeeks.org/introduction-of-b-tree-2/
+
 > https://www.geeksforgeeks.org/delete-operation-in-b-tree/
+
+> https://www.geeksforgeeks.org/introduction-of-b-tree-2/
+
+> https://rosettacode.org/wiki/AVL_tree#C.2B.2B
