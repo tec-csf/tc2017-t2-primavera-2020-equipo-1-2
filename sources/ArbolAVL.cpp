@@ -569,5 +569,16 @@ int main(int argc, char const *argv[])
     auto durDel = duration_cast<microseconds>(stopDel - startDel);
     cout << "Tiempo total de eliminación de 10 valores aleatorios: " << durDel.count() << endl << endl;
 
+    
+    cout << "-------------------------------------------------------------------------------------------------------------------------------------------------" << endl; 
+
+    cout << "|\t\tCantidad\t\t\t|"<< "\t\tInsert\t\t|" << "\t\tSearch\t\t|" << "\t\tDelete\t\t|" << endl;
+
+    cout << "-------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+
+    cout << "|\t\t  " << noOperaciones << "\t\t\t|\t\t" << durIn.count() << "\t\t|\t\t" << durBus.count() << "\t\t|\t\t" << durDel.count() << "\t\t|" << endl;
+
+    cout << "-------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+
     return 0;
 }
