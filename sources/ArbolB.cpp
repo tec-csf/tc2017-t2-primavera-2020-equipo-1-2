@@ -8,6 +8,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <chrono>
+#include <iomanip>
 #include <fstream>
 
 using namespace std;
@@ -518,11 +519,12 @@ int main(int argc, char const *argv[])
           << "\t\tTiempo que le tomó" << endl;
     inDoc << "--------------------------------------------------------" << endl;
 
+    auto startP1 = high_resolution_clock::now();
+    
     if (inputFile.is_open())
     {
         auto startIn = high_resolution_clock::now();
 
-        auto startP1 = high_resolution_clock::now();
 
         while (getline(inputFile, number))
         {
@@ -545,10 +547,14 @@ int main(int argc, char const *argv[])
         inDoc << "Le demoró: " << durP1.count() << " microsegundos en insertar " << noOperaciones << "valores\n"
              << endl;
 
-        return durP1;
-
         //cout << "Sale del ciclo" << endl;
     }
+
+    auto stopP1 = high_resolution_clock::now();
+    auto durP1 = duration_cast<microseconds>(stopP1 - startP1);
+
+    inDoc << "Le demoró: " << durP1.count() << " microsegundos en insertar " << noOperaciones << " valores\n"
+          << endl;
 
     cout << "\nUna vez que el árbol esta insertado:";
     grados.atraviesa();
@@ -673,10 +679,15 @@ int main(int argc, char const *argv[])
     grados.atraviesa();
     cout << "\n\n";
 
-    cout << "Datos finales\n\n" << endl;
+    cout << "-------------------------------------------------------------------------------------------------------------------------------------------------" << endl; 
 
-    cout << "Cantidad\t\t" << "\t|\t" << " Insert\t\t" << "\t|\t" << " \t\tSearch\t\t" << "\t|\tDelete\t\t\t|" << endl;
-    cout << noOperaciones << "\t\t\t|\t" << durP1.count();
+    cout << "|\t\tCantidad\t\t\t|"<< "\t\tInsert\t\t|" << "\t\tSearch\t\t|" << "\t\tDelete\t\t|" << endl;
+
+    cout << "-------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+
+    cout << "|\t\t  " << noOperaciones << "\t\t\t|\t\t" << durP1.count() << "\t\t|\t\t" << durP2.count() << "\t\t|\t\t" << durP3.count() << "\t\t|" << endl;
+
+    cout << "-------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 
     return 0;
 }
