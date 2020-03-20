@@ -527,8 +527,8 @@ int main(int argc, char const *argv[])
     ofstream delDoc("OutputDeleteDiez.txt");
 
     cout << "¿Cuántos valores se van a insertar?" << endl;
-    //cout << "Se insertó " << noOperaciones << " por default." << endl;
-    cin >> noOperaciones;
+    cout << "Se insertó " << noOperaciones << " por default." << endl;
+    //cin >> noOperaciones;
 
     srand((unsigned)time(0));
 
