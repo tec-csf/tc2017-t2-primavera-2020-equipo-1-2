@@ -545,6 +545,8 @@ int main(int argc, char const *argv[])
         inDoc << "Le demoró: " << durP1.count() << " microsegundos en insertar " << noOperaciones << "valores\n"
              << endl;
 
+        return durP1;
+
         //cout << "Sale del ciclo" << endl;
     }
 
@@ -670,6 +672,11 @@ int main(int argc, char const *argv[])
     cout << "\nUna vez que se eliminó un valor en el árbol:";
     grados.atraviesa();
     cout << "\n\n";
+
+    cout << "Datos finales\n\n" << endl;
+
+    cout << "Cantidad\t\t" << "\t|\t" << " Insert\t\t" << "\t|\t" << " \t\tSearch\t\t" << "\t|\tDelete\t\t\t|" << endl;
+    cout << noOperaciones << "\t\t\t|\t" << durP1.count();
 
     return 0;
 }
