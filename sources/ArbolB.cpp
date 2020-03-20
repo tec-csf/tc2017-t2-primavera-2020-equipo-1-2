@@ -13,7 +13,7 @@
 
 using namespace std;
 using namespace std::chrono;
-
+// Ramas defines the nodes
 class Ramas
 {
     int *valores; //llave de valores
@@ -102,9 +102,9 @@ Ramas::Ramas(int val1, bool ramita)
     x = 0;
 }
 
-/* encontrarLlave it fin
-* @param 
-* @return 
+/* encontrarLlave:it finds the position that eliminar will use
+* @param int k is the value to be search and delete
+* @return  idx the index of the value searched 
 */
 int Ramas::encontrarLlave(int k)
 {
@@ -114,6 +114,10 @@ int Ramas::encontrarLlave(int k)
     return idx;
 }
 
+/* eliminar: deletes the value of the subtree 
+* @param int k is the value to be deleted 
+* @return void
+*/
 void Ramas::eliminar(int k)
 {
     int idx = encontrarLlave(k);
@@ -147,6 +151,10 @@ void Ramas::eliminar(int k)
     return;
 }
 
+/* eliminarHoja: deletes the value of the subtree if it is in a leaf and do not have son's (subtree's)
+* @param int idx is where the value is found 
+* @return void
+*/
 void Ramas::eliminarHoja(int idx)
 {
 
@@ -157,7 +165,10 @@ void Ramas::eliminarHoja(int idx)
 
     return;
 }
-
+/* eliminarPadre: deletes the value of the subtree if it is not a leaf and has son's (subtree's)
+* @param int idx is where the value is found 
+* @return void
+*/
 void Ramas::eliminarPadre(int idx)
 {
 
@@ -185,6 +196,10 @@ void Ramas::eliminarPadre(int idx)
     return;
 }
 
+/* obtenerPredecesor: it obtains the leaf from the farthest right subtree 
+* @param int idx is where the value is found 
+* @return int the node predecessor
+*/
 int Ramas::obtenerPredecesor(int idx)
 {
     Ramas *cur = apun[idx];
@@ -194,6 +209,10 @@ int Ramas::obtenerPredecesor(int idx)
     return cur->valores[cur->x - 1];
 }
 
+/* obtenerSucesor: it obtains the leaf from the farthest left subtree 
+* @param int idx is where the value is found 
+* @return int the node succesor 
+*/
 int Ramas::obternerSucesor(int idx)
 {
     Ramas *cur = apun[idx + 1];
@@ -203,6 +222,10 @@ int Ramas::obternerSucesor(int idx)
     return cur->valores[0];
 }
 
+/* llenar: it checks if the node that you are going to delete has more subtrees 
+* @param int idx is where the value is found 
+* @return void
+*/
 void Ramas::llenar(int idx)
 {
 
@@ -222,6 +245,10 @@ void Ramas::llenar(int idx)
     return;
 }
 
+/* tomarPrevio: it functions as a simple rotation where you copy the previous value of the subtree and copies into the index you want to delete
+* @param int idx is where the value is found 
+* @return void
+*/
 void Ramas::tomarPrevio(int idx)
 {
 
@@ -250,6 +277,10 @@ void Ramas::tomarPrevio(int idx)
     return;
 }
 
+/* tomarPrevio: it functions as a simple rotation where you copy the next value of the subtree and copies into the index you want to delete
+* @param int idx is where the value is found 
+* @return void
+*/
 void Ramas::tomarSiguiente(int idx)
 {
 
@@ -278,6 +309,10 @@ void Ramas::tomarSiguiente(int idx)
     return;
 }
 
+/* mezclar: the values of the array at index merges with the values of the array at index +1, thus it frees the node in the index +1.
+* @param int idx is where the value is found 
+* @return void
+*/
 void Ramas::mezclar(int idx)
 {
     Ramas *child = apun[idx];
