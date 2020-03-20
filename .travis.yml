@@ -5,4 +5,4 @@ script:
     - g++ -o AB ArbolB.cpp -std=c++17
     - ./AB -i ../examples/diez.txt
     - g++ -o AVL ArbolAVL.cpp -std=c++17
-    - ./AVL -i ../examples/diez.txt
+    - ./AVL

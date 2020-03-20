@@ -397,7 +397,7 @@ int main(int argc, char const *argv[])
 
 	string inputDoc, nombreArchivo, number;
 	fstream inputFile;
-	int nuevoNo, noOperaciones, perdu;
+	int nuevoNo, noOperaciones = 1000, perdu;
 	int arr[10];
 
 	int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
@@ -406,10 +406,9 @@ int main(int argc, char const *argv[])
     ofstream searchDoc("OutputsAVL/OutputSearchAVLMil.txt");
     ofstream delDoc("OutputsAVL/OutputDeleteAVLMil.txt");
 
-	// cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
+	cout << "Cuántos valores se van a insertar?" << endl;
 	// cin >> noOperaciones;
-
-	noOperaciones = 0;
+    cout << "Tomando " << noOperaciones << " como default" << endl;
 
 	srand((unsigned)time(0));
 
@@ -430,27 +429,46 @@ int main(int argc, char const *argv[])
 	      << "\t\tTiempo que le tomó" << endl;
 	inDoc << "--------------------------------------------------------" << endl;
 
-	if (inputFile.is_open())
-	{
-	    auto startIn = high_resolution_clock::now();
+    auto startIn = high_resolution_clock::now();
 
-	    while (getline(inputFile, number))
-	    {
-	        nuevoNo = stoi(number);
+    for (int i = 0; i < noOperaciones; ++i)
+    {
+        nuevoNo = rand() % noOperaciones + 1;
 
-	        tree.insert(nuevoNo);
+        tree.insert(nuevoNo);
 
-	        auto stopIn = high_resolution_clock::now();
-	        auto durIn = duration_cast<microseconds>(stopIn - startIn);
+        auto stopIn = high_resolution_clock::now();
+        auto durIn = duration_cast<microseconds>(stopIn - startIn);
 
-	        cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
-	        inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
-	    }
+        cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+        inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+    }
 
-	    auto stopIn = high_resolution_clock::now();
-	    auto durIn = duration_cast<microseconds>(stopIn - startIn);
-	    cout << "Tiempo total de creación de Árbol AVL: " << durIn.count() << endl << endl;
-	}
+    auto stopIn = high_resolution_clock::now();
+    auto durIn = duration_cast<microseconds>(stopIn - startIn);
+    cout << "Tiempo total de creación de Árbol AVL: " << durIn.count() << endl << endl;
+
+	// if (inputFile.is_open())
+	// {
+	//     auto startIn = high_resolution_clock::now();
+
+	//     while (getline(inputFile, number))
+	//     {
+	//         nuevoNo = stoi(number);
+
+	//         tree.insert(nuevoNo);
+
+	//         auto stopIn = high_resolution_clock::now();
+	//         auto durIn = duration_cast<microseconds>(stopIn - startIn);
+
+	//         cout << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+	//         inDoc << "    " << nuevoNo << "\t\t | \t\t" << durIn.count() << endl;
+	//     }
+
+	//     auto stopIn = high_resolution_clock::now();
+	//     auto durIn = duration_cast<microseconds>(stopIn - startIn);
+	//     cout << "Tiempo total de creación de Árbol AVL: " << durIn.count() << endl << endl;
+	// }
 	inDoc.close();
 	inputFile.close();
 
