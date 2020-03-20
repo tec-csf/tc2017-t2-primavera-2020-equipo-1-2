@@ -526,9 +526,9 @@ int main(int argc, char const *argv[])
     ofstream searchDoc("OutputSearchDiez.txt");
     ofstream delDoc("OutputDeleteDiez.txt");
 
-    cout << "Cuántos valores se van a insertar/borrar/buscar?" << endl;
-    cout << "Se insertó " << noOperaciones << " por default." << endl;
-    //cin >> noOperaciones;
+    cout << "¿Cuántos valores se van a insertar?" << endl;
+    //cout << "Se insertó " << noOperaciones << " por default." << endl;
+    cin >> noOperaciones;
 
     srand((unsigned)time(0));
 
