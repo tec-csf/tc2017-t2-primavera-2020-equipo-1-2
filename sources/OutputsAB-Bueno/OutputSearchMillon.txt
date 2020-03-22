@@ -1,0 +1,19 @@
+
+
+Inicio de búsqueda
+
+
+
+Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
+    8		 | 		Encontrado		 | 		9
+    8		 | 		Encontrado		 | 		65
+    5		 | 		Encontrado		 | 		119
+    7		 | 		Encontrado		 | 		176
+    5		 | 		Encontrado		 | 		232
+    3		 | 		Encontrado		 | 		320
+    4		 | 		Encontrado		 | 		376
+    6		 | 		Encontrado		 | 		429
+    9		 | 		Encontrado		 | 		482
+    4		 | 		Encontrado		 | 		539
+Le demoró: 592 microsegundos en buscar 1000000 valores
+

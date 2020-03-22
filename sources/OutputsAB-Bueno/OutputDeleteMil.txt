@@ -1,0 +1,20 @@
+
+
+Comienza el proceso de eliminación
+
+
+
+Número 		 |		Tiempo que le tomó
+--------------------------------------------------------
+    8		 | 		1
+    9		 | 		127
+    6		 | 		187
+    1		 | 		245
+    2		 | 		321
+    9		 | 		424
+    2		 | 		504
+    2		 | 		596
+    4		 | 		648
+    1		 | 		694
+Le demoró: 739 microsegundos en borrar 1000 valores
+

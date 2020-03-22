@@ -1,3 +1,19 @@
 
 
+Inicio de búsqueda
+
+
+
 Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
+    4		 | 		Encontrado		 | 		8
+    2		 | 		Encontrado		 | 		1210
+    4		 | 		Encontrado		 | 		1605
+    10		 | 		Encontrado		 | 		1929
+    1		 | 		Encontrado		 | 		2236
+    10		 | 		Encontrado		 | 		2519
+    5		 | 		Encontrado		 | 		2810
+    8		 | 		Encontrado		 | 		3101
+    9		 | 		Encontrado		 | 		3435
+    2		 | 		Encontrado		 | 		3732
+Le demoró: 4013 microsegundos en buscar 10 valores
+

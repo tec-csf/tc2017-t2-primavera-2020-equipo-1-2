@@ -519,12 +519,12 @@ int main(int argc, char const *argv[])
     string inputDoc, nombreArchivo, number;
     fstream inputFile;
 
-    int nuevoNo, noOperaciones = 10, perdu, operacionesPre = 10;
+    int nuevoNo, noOperaciones = 1000000, perdu, operacionesPre = 10;
     int cantValores; // Cantidad de valores aleatorios que se insertarán en el Árbol
 
-    ofstream inDoc("OutputInsertion.txt");
-    ofstream searchDoc("OutputSearch.txt");
-    ofstream delDoc("OutputDelete.txt");
+    ofstream inDoc("OutputsAB-Bueno/OutputInsertionMillon.txt");
+    ofstream searchDoc("OutputsAB-Bueno/OutputSearchMillon.txt");
+    ofstream delDoc("OutputsAB-Bueno/OutputDeleteMillon.txt");
 
     cout << "¿Cuántos valores se van a insertar?" << endl;
     cout << "Se insertó " << noOperaciones << " por default." << endl;
