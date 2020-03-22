@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
+    35		 | 		No se encontró		 | 		0
+    25		 | 		No se encontró		 | 		559
+    88		 | 		No se encontró		 | 		1025
+    43		 | 		No se encontró		 | 		1534
+    49		 | 		No se encontró		 | 		2062
+    90		 | 		No se encontró		 | 		4452
+    12		 | 		No se encontró		 | 		4936
+    16		 | 		No se encontró		 | 		5505
+    83		 | 		No se encontró		 | 		5959
+    21		 | 		No se encontró		 | 		6415

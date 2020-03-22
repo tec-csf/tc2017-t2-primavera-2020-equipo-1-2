@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se eliminó?		 |		Tiempo que le tomó
+    79		 | 		No se encontró		 | 		0
+    28		 | 		Eliminado		 | 		430
+    86		 | 		Eliminado		 | 		879
+    72		 | 		No se encontró		 | 		1340
+    100		 | 		No se encontró		 | 		1799
+    33		 | 		Eliminado		 | 		2255
+    17		 | 		Eliminado		 | 		2723
+    21		 | 		No se encontró		 | 		3174
+    33		 | 		No se encontró		 | 		3628
+    50		 | 		No se encontró		 | 		4080

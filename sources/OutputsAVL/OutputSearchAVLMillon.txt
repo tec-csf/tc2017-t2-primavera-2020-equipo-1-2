@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se encontró?		 |		Tiempo que le tomó
+    44		 | 		No se encontró		 | 		1
+    10		 | 		Encontrado		 | 		106
+    100		 | 		Encontrado		 | 		163
+    87		 | 		Encontrado		 | 		221
+    75		 | 		Encontrado		 | 		274
+    87		 | 		Encontrado		 | 		327
+    15		 | 		Encontrado		 | 		379
+    24		 | 		Encontrado		 | 		432
+    73		 | 		Encontrado		 | 		484
+    52		 | 		No se encontró		 | 		537

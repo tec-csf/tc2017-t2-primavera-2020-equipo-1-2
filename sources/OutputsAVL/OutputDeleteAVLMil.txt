@@ -1,0 +1,13 @@
+
+
+Número 		 |		¿Se eliminó?		 |		Tiempo que le tomó
+    66		 | 		Eliminado		 | 		0
+    71		 | 		Eliminado		 | 		72
+    32		 | 		No se encontró		 | 		127
+    53		 | 		No se encontró		 | 		184
+    5		 | 		Eliminado		 | 		242
+    77		 | 		Eliminado		 | 		294
+    1		 | 		No se encontró		 | 		347
+    97		 | 		Eliminado		 | 		403
+    89		 | 		Eliminado		 | 		456
+    47		 | 		No se encontró		 | 		507

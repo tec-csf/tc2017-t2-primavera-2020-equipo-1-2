@@ -1,0 +1,14 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "iosfwd": "cpp",
+        "fstream": "cpp",
+        "locale": "cpp",
+        "chrono": "cpp",
+        "ostream": "cpp"
+    },
+    "cSpell.words": [
+        "insertar",
+        "nuevo"
+    ]
+}

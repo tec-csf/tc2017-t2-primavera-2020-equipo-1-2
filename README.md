@@ -1,4 +1,4 @@
-# Tarea *2*. *Análisis de Algoritmos*
+# Tarea 2. **Análisis de Algoritmos**
 
 ---
 
@@ -87,3 +87,4 @@ Para esta solución, no se implementó el uso de headers (__.h__).
 > https://www.geeksforgeeks.org/introduction-of-b-tree-2/
 
 > https://rosettacode.org/wiki/AVL_tree#C.2B.2B
+
