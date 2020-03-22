@@ -219,36 +219,52 @@ AVLtree<T>::~AVLtree(void)
 * @param key contains the value of the node
 * @return true successful insertion
 */
+
 template <class T>
 bool AVLtree<T>::insert(T key)
 {
     if (root == NULL) {
         root = new AVLnode<T>(key, NULL); //if there's no root it will create a new node which will be the node of the new tree
+        return true;
     }
     else {
         AVLnode<T>
-            *n = root,
-            *parent;
+            *node = root,
+            *parent = root;
 
         while (true) {
-            if (n->key == key)
+            if (node->key == key)
+            {
                 return false;
+            }
 
-            parent = n; //if key and the value in root are the same, it makes root the parent
-
-            bool goLeft = n->key > key;
-            n = goLeft ? n->left : n->right; //orders the values to be inserted
-
-            if (n == NULL) {
-                if (goLeft) {
-                    parent->left = new AVLnode<T>(key, parent);
+            else if(key > node->key)
+            {
+                if (node->right == NULL)
+                {
+                    node->right = new AVLnode<T>(key, node);
+                    rebalance(parent);
+                    return true;
+                } 
+                else
+                {
+                    parent = node;
+                    node = node->right;
                 }
-                else {
-                    parent->right = new AVLnode<T>(key, parent);
+            }
+            else if(key < node->key)
+            {
+                if (node->left == NULL)
+                {
+                    node->left = new AVLnode<T>(key, node);
+                    rebalance(parent);
+                    return true;
+                } 
+                else
+                {
+                    parent = node;
+                    node = node->left;
                 }
-
-                rebalance(parent);
-                break;
             }
         }
     }
@@ -397,7 +413,7 @@ int main(int argc, char const *argv[])
 
 	string inputDoc, nombreArchivo, number;
 	fstream inputFile;
-	int nuevoNo, noOperaciones = 10, perdu;
+	int nuevoNo, noOperaciones = 10000, perdu;
 	int arr[10];
 
 	int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
