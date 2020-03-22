@@ -413,7 +413,7 @@ int main(int argc, char const *argv[])
 
 	string inputDoc, nombreArchivo, number;
 	fstream inputFile;
-	int nuevoNo, noOperaciones = 10000, perdu;
+	int nuevoNo, noOperaciones = 10, perdu;
 	int arr[10];
 
 	int cantValores;              // Cantidad de valores aleatorios que se insertarán en el Árbol
